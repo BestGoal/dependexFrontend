@@ -1,0 +1,23 @@
+.header-app-bar {
+    max-width: 85vw;
+    margin: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    .header-top-list{
+        width: auto;
+        & > div > div > span {
+            background: transparent
+        }
+        & > div > div > div > button {
+            min-width: 100px
+        }
+    }
+}
+.header-card{
+    min-width: 275,
+}
+@media(max-width: 1179px) {
+    .header-app-bar{
+        max-width: 100%;
+    }
+}

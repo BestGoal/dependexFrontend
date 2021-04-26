@@ -8,7 +8,7 @@ import { Layout } from "./layout/index";
 import configureStore from "./redux/store";
 import reportWebVitals from './reportWebVitals';
 import { sessionCheck } from "./redux/action/auth/loginActions";
-import './asset/index.scss';
+import './asset/scss/index.scss';
 
 const renderApp = preloadedState => {
 	const store = configureStore(preloadedState);

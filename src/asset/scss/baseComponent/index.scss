@@ -1,0 +1,47 @@
+// width
+.w-100{
+    width: 100vw;
+}
+
+// display
+.d-flex {
+    display: flex;
+}
+
+// position
+.position-fixed {
+    position: fixed
+}
+
+// justify-content
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-right {
+    justify-content: flex-right;
+}
+
+// align Items
+.align-items-center {
+    align-items: center;
+}
+
+// zindex
+.z-index-999{
+    z-index: 999;
+}
+
+// font
+.font-weight-bold {
+    font-weight: bold !important;
+}
+
+// background
+.bg-transparent{
+    background: transparent !important;
+}
+
+// box shadow
+.box-shadow-none{
+    box-shadow: none !important;
+}
