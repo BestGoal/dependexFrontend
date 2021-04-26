@@ -1,0 +1,50 @@
+.dashboard-top-section1{
+    max-width: 85vw;
+    margin: auto;
+    padding-top: 3rem;
+    .dashboard-exchange-card{
+        background-color: transparent;
+        box-shadow: none;
+        color: black;
+        & > div > div > span {
+            background: #1656b9
+        }
+    }
+    .dashboard-section1-fletter{
+        color: white; 
+        font-weight: bold; 
+        font-size: 2.5rem
+    }
+    .dashboard-section1-sletter{
+        color: white; 
+        font-weight: bold; 
+        font-size: 1rem
+    }
+    .dashboard-section1-exchangeBtn{
+        background: rgb(12, 108, 242); 
+        width: 100%; 
+        padding: 1rem; 
+        color: white;
+    }
+}
+@media(max-width: 1179px) {
+    .dashboard-top-section1{
+        max-width: 98%;
+        padding-top: 0;
+        .dashboard-mv-letter-box{
+            padding-left: 1rem;
+        }
+        .dashboard-section1-fletter{
+            margin: 0;
+            font-size: 2rem
+        }
+    }
+}
+@media(max-width: 769px) {
+    #dashboard-top-section1-bg{
+        background:transparent !important;
+    }
+    .dashboard-top-section1{
+        display: block;
+    }
+}

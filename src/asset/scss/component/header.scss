@@ -13,11 +13,33 @@
         }
     }
 }
-.header-card{
-    min-width: 275,
+.header-card {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    width: 500px;
+    .border-solid-1{
+        border-bottom: 1px solid rgb(240, 242, 247);
+    }
+    .header-mobile-item-img{
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+    .header-mobile-item-letter{
+        padding: 1rem;
+        h3,p{
+            margin: 0;
+        }
+    }
 }
 @media(max-width: 1179px) {
     .header-app-bar{
         max-width: 100%;
+    }
+}
+@media(max-width: 510px) {
+    .header-card{
+        width: 95vw;
     }
 }

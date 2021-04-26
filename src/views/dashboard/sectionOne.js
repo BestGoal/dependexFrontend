@@ -9,38 +9,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TextField from '@material-ui/core/TextField';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import Background from "../../asset/image/background/hero-gradient.png"
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    background: '#040d25',
-    paddingTop: "80px"
-  },
   navContainer: {
     background: `url(${Background})`, 
     backgroundSize: '100% 100%'
-  },
-  topSection: {
-    maxWidth: "85vw",
-    margin: "auto",
-    display: "flex",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(10)
-  },
-  appbar: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-    color: "black",
-    "& > div > div > span": {
-        background: "#1656b9"
-    },
-  },
-  middleMargin: {
-    marginTop: theme.spacing(4)
   },
   rateButton: {
     boxShadow: "none",
@@ -64,36 +38,6 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     width: "30%",
-    // marginTop: theme.spacing(2)
-  },
-  root: {
-    padding: '1rem',
-    marginBottom: "3rem",
-  },
-  pt1: {
-    paddingTop: "1rem"
-  },
-  ml1: {
-    marginLeft: '1rem'
-  },
-  pl5: {
-    paddingLeft: '5rem'
-  },
-  fLetter: {
-    color: 'white', 
-    fontWeight: 'bold', 
-    fontSize: '2rem'
-  },
-  sLetter: {
-    color: 'white', 
-    fontWeight: 'bold', 
-    fontSize: '1rem'
-  },
-  exchangeBtn: {
-    background: "rgb(12, 108, 242)", 
-    width: '100%', 
-    padding: "1rem", 
-    color: 'white'
   }
 }));
 
@@ -115,20 +59,20 @@ export default function SectionOne() {
   };
 
   return (
-    <Box className={classes.container}>
-      <Box className={classes.navContainer}>
-        <Box className={classes.topSection}>
+    <Box className="bg-theme pt-6">
+      <Box classes={{root: classes.navContainer}} id="dashboard-top-section1-bg">
+        <Box className="dashboard-top-section1 d-flex justify-content-between">
           <Box>
-            <Card className={classes.root}>
+            <Card className="mb-3 p-1">
               <CardContent>
-                <AppBar position="static" className={classes.appbar}>
+                <AppBar position="static" className="dashboard-exchange-card">
                   <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                     <Tab label="Exchange" {...a11yProps(0)} />
                     <Tab label="Buy" {...a11yProps(1)} />
                     <Tab label="Sell" {...a11yProps(2)} />
                   </Tabs>
                 </AppBar>
-                <Box className={classes.middleMargin}>
+                <Box className="mt-1">
                   <Button className={rateMode === 0 ? classes.focusButton: classes.rateButton} onClick={()=>setRateMode(0)} variant="contained"> Floating Rate </Button>
                   <Button className={rateMode === 1 ? classes.focusButton: classes.rateButton} onClick={()=>setRateMode(1)} variant="contained"> Fixed Rate </Button>
                 </Box>
@@ -148,11 +92,6 @@ export default function SectionOne() {
                       type="number"
                       className={classes.inputBorder}
                     />
-                    {/* <FormControl variant="filled" className={classes.formControl}>
-                      <Button variant="contained">
-                        <p>asdf</p>
-                      </Button>
-                    </FormControl> */}
                   </Box>
                   <Box style ={{width: "100%", alignItems: "center"}}>
                     <TextField
@@ -169,30 +108,25 @@ export default function SectionOne() {
                       type="number"
                       className={classes.inputBorder}
                     />
-                    {/* <FormControl variant="filled" className={classes.formControl}>
-                      <Button variant="contained">
-                        <p>asdf</p>
-                      </Button>
-                    </FormControl> */}
                   </Box>
                 </Box>
               </CardContent>
               <CardActions>
-                <Button variant="contained" className={classes.exchangeBtn}>
+                <Button variant="contained" className="dashboard-section1-exchangeBtn">
                   Exchange now
                 </Button>
               </CardActions>
             </Card>
           </Box>
-          <Box className={classes.pl5}>
+          <Box className="pl-5 dashboard-mv-letter-box">
             <Box>
-              <p className={classes.fLetter}>The World's Most Popular Way to Buy, Hold, and Use Crypto</p>
-              <p className={classes.sLetter}>Fast and secure way to exchange and purchase 150+ cryptocurrencies. 24/7 live-chat support.</p>
-              <p className={classes.sLetter}>Trusted by 71M Wallets - with Over $620 Billion in Transactions - Since 2013</p>
+              <p className="dashboard-section1-fletter">The World's Most Popular Way to Buy, Hold, and Use Crypto</p>
+              <p className="dashboard-section1-sletter">Fast and secure way to exchange and purchase 150+ cryptocurrencies. 24/7 live-chat support.</p>
+              <p className="dashboard-section1-sletter">Trusted by 71M Wallets - with Over $620 Billion in Transactions - Since 2013</p>
             </Box>
-            <Box className={classes.pt1}>
+            <Box className="pt-1">
                 <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/app-store.svg"} alt=""></img>
-                <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/google-play.svg"} alt="" className={classes.ml1}></img>
+                <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/google-play.svg"} alt="" className="ml-1"></img>
             </Box>
           </Box>
         </Box>

@@ -10,13 +10,59 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import Clear from "@material-ui/icons/Clear"
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import WalletIcon from "../../../../asset/image/section/wallet-icon.png"
+import ExchangeIcon from "../../../../asset/image/section/exchange-icon.png"
+import ExplorerIcon from "../../../../asset/image/section/explorer-icon.png"
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    title: {
-        fontSize: 14,
+    search: {
+        padding: "0.3rem",
+        display: "flex",
+        alignItems: "center",
+        border: "1px solid",
+        marginTop: "1rem",
+        width: "100%",
+        borderRadius: theme.shape.borderRadius
+    },
+    searchIcon: {
+        padding: theme.spacing(0, 2),
+        height: '100%',
+        position: 'absolute',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    inputRoot: {
+        color: 'inherit',
+        width: '100%',
+        "&>input": {
+            width: "100%"
+        }
+    },
+    inputInput: {
+        padding: theme.spacing(1, 1, 1, 0),
+        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        transition: theme.transitions.create('width')
+    },
+    login: {
+        backgroundColor: "rgb(53, 63, 82)",
+        color: "white",
+        width: "50%",
+        padding: "0.8rem"
+    },
+    register: {
+        backgroundColor: "rgb(12, 108, 242)",
+        marginLeft: theme.spacing(1),
+        color: "white",
+        width: "50%",
+        padding: "0.8rem"
     }
 }));
 
@@ -45,13 +91,54 @@ export default function Header() {
                     mode && 
                     <Card className="header-card">
                         <CardContent>
-                            <Typography className={classes.title} color="textSecondary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-                            <hr />
+                            <Box className="d-flex justify-content-between border-solid-1">
+                                <h3> Products </h3>
+                                <Clear onClick ={() => setMode(!mode)} />
+                            </Box>
+                            <Box className="d-flex justify-content-start border-solid-1">
+                                <Box className="header-mobile-item-img">
+                                    <img src={WalletIcon} alt="" />
+                                </Box>
+                                <Box className="header-mobile-item-letter">
+                                    <h3> Wallet </h3>
+                                    <p>Buy & Sell Crypto</p>
+                                </Box>
+                            </Box>
+                            <Box className="d-flex justify-content-start border-solid-1">
+                                <Box className="header-mobile-item-img">
+                                    <img src={ExchangeIcon} alt="" />
+                                </Box>
+                                <Box className="header-mobile-item-letter">
+                                    <h3> Exchange </h3>
+                                    <p>Professional Trading</p>
+                                </Box>
+                            </Box>
+                            <Box className="d-flex justify-content-start border-solid-1">
+                                <Box className="header-mobile-item-img">
+                                    <img src={ExplorerIcon} alt="" />
+                                </Box>
+                                <Box className="header-mobile-item-letter">
+                                    <h3> Explorer </h3>
+                                    <p>Live Data, Chart, & Transactions</p>
+                                </Box>
+                            </Box>
+                            <Box className={classes.search}>
+                                <Box className={classes.searchIcon}>
+                                    <SearchIcon />
+                                </Box>
+                                <InputBase
+                                    placeholder="Search…"
+                                    classes={{
+                                        root: classes.inputRoot,
+                                        input: classes.inputInput,
+                                    }}
+                                    inputProps={{ 'aria-label': 'search' }}
+                                />
+                            </Box>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">Learn More</Button>
+                            <Button className={classes.login} variant="contained"> Login </Button>
+                            <Button className={classes.register} variant="contained" color="primary"> Register </Button>
                         </CardActions>
                     </Card>
                 }
