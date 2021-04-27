@@ -7,7 +7,7 @@ import Mobile from "./navComponent/mobile"
 export default function Header() {
 
     return (
-        <Box className="position-fixed w-100 z-index-999 bg-theme">
+        <Box className="position-fixed w-100 z-index-999">
 			<Media
 				queries={{Mobile : "(max-width: 768px)", Tablet : "(min-width: 769px)"}}>
 				{matches => (

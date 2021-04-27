@@ -93,7 +93,7 @@ export default function Header() {
                     <AppBar position="static" className="bg-transparent box-shadow-none header-top-list">
                         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                             <Tab label="Wallet" {...a11yProps(1)} />
-                            <Tab label="Exchange" {...a11yProps(2)} />
+                            <Tab label="Swap" {...a11yProps(2)} />
                             <Tab label="Explorer" {...a11yProps(3)} />
                         </Tabs>
                     </AppBar>

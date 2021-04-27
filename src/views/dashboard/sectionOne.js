@@ -9,12 +9,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TextField from '@material-ui/core/TextField';
-import Background from "../../asset/image/background/hero-gradient.png"
+import Background from "../../asset/image/background/download.jpg"
 
 const useStyles = makeStyles((theme) => ({
   navContainer: {
-    background: `url(${Background})`, 
-    backgroundSize: '100% 100%'
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.8)), url(/static/media/download.a4fc3413.jpg)`, 
+    // background: `url(${Background})`, 
+    backgroundSize: '100% 100%',
+    paddingTop: "8rem"
   },
   rateButton: {
     boxShadow: "none",
@@ -59,7 +61,6 @@ export default function SectionOne() {
   };
 
   return (
-    <Box className="bg-theme pt-6">
       <Box classes={{root: classes.navContainer}} id="dashboard-top-section1-bg">
         <Box className="dashboard-top-section1 d-flex justify-content-between">
           <Box>
@@ -67,9 +68,10 @@ export default function SectionOne() {
               <CardContent>
                 <AppBar position="static" className="dashboard-exchange-card">
                   <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    <Tab label="Exchange" {...a11yProps(0)} />
+                    <Tab label="Swap" {...a11yProps(0)} />
                     <Tab label="Buy" {...a11yProps(1)} />
                     <Tab label="Sell" {...a11yProps(2)} />
+                    <Tab label="Earn" {...a11yProps(3)} />
                   </Tabs>
                 </AppBar>
                 <Box className="mt-1">
@@ -131,6 +133,5 @@ export default function SectionOne() {
           </Box>
         </Box>
       </Box>
-    </Box>
   )
 }

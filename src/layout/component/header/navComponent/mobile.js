@@ -109,7 +109,7 @@ export default function Header() {
                                     <img src={ExchangeIcon} alt="" />
                                 </Box>
                                 <Box className="header-mobile-item-letter">
-                                    <h3> Exchange </h3>
+                                    <h3> Swap </h3>
                                     <p>Professional Trading</p>
                                 </Box>
                             </Box>
