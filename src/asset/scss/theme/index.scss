@@ -1,3 +1,16 @@
-.bg-theme{
-    background: #040d25
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background: #eaeaea;
+}
+::-webkit-scrollbar-thumb {
+    background: #a5a5a5;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8a8989;
+}
+
+section {
+    background-color: #FFFFFF;
 }

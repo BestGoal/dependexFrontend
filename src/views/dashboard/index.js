@@ -1,21 +1,21 @@
 import React from "react"
-import Section0 from "./sectionZero"
-// import Section1 from "./sectionOne"
-// import Section2 from "./sectionTwo"
-// import Section3 from "./sectionThree"
-// import Section4 from "./sectionFour"
-// import Section5 from "./sectionFive"
+import SectionOne from "./sectionOne"
+import SectionTwo from "./sectionTwo"
+import SectionThree from "./sectionThree"
+import SectionFour from "./sectionFour"
+import SectionFive from "./sectionFive"
+import SectionSix from "./sectionSix"
 
 export default function Dashboard() {
 
   return (
     <React.Fragment>
-      <Section0 />
-      {/* <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 /> */}
+      <SectionOne></SectionOne>
+      <SectionTwo></SectionTwo>
+      <SectionThree></SectionThree>
+      <SectionFour></SectionFour>
+      <SectionFive></SectionFive>
+      <SectionSix></SectionSix>
     </React.Fragment>
   )
 }

@@ -1,19 +1,15 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Language from '@material-ui/icons/Language';
 import FaceBook from "../../../asset/image/section/facebook.jpg"
 import Instagram from "../../../asset/image/section/instagram.png"
 import LinkdIn from "../../../asset/image/section/linkedin.jpg"
 import Medium from "../../../asset/image/section/medium-plain.png"
 import Twitter from "../../../asset/image/section/twitter.jpg"
-import Company from "../../../asset/image/section/company.svg"
-import FooterGoogle from "../../../asset/image/section/footer-android.png"
-import FooterApple from "../../../asset/image/section/footer-ios.png"
 
 const useStyles = makeStyles((theme) => ({
     firstTop: {
-        maxWidth: "85vw",
+        maxWidth: "1400px",
         margin: "auto"
     },
     topSection: {
@@ -108,10 +104,6 @@ const useStyles = makeStyles((theme) => ({
         "& > span": {
             paddingLeft:"1rem"
         }
-    },
-    section2: {
-        display: "flex",
-        justifyContent: "space-between"
     }
 }));
 
@@ -181,24 +173,6 @@ export default function Header() {
                                 <li>Ventures</li>
                                 <li>Institutional</li>
                             </ul>                            
-                        </Box>
-                    </Box>
-                    <Box className={classes.section2}>
-                        <Box>
-                            <Box className={classes.dflexac}>
-                                <Language />
-                                <span>English</span>
-                            </Box>
-                            <Box className={classes.dflexMedium}>
-                                <img src={Company} alt=""></img>
-                                <span>Dependex.com  NMLS ID: 2024031</span>
-                            </Box>
-                        </Box>
-                        <Box>
-                            <Box className={classes.dflexac}>
-                                <img src={FooterGoogle} alt=""></img>
-                                <img src={FooterApple} alt=""></img>
-                            </Box>
                         </Box>
                     </Box>
                 </Box>
