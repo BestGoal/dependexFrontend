@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FaceBook from "../../../asset/image/section/facebook.jpg"
 import Instagram from "../../../asset/image/section/instagram.png"
 import LinkdIn from "../../../asset/image/section/linkedin.jpg"
-import Medium from "../../../asset/image/section/medium-plain.png"
+// import Medium from "../../../asset/image/section/medium-plain.png"
 import Twitter from "../../../asset/image/section/twitter.jpg"
 
 const useStyles = makeStyles((theme) => ({
@@ -111,7 +111,7 @@ export default function Header() {
     const classes = useStyles();
     return (
         <Box className={classes.firstTop}>
-            <Box className={classes.topSection}>
+            <Box className={classes.topSection} style={{paddingBottom: "0"}}>
                 <Box className={classes.container}>
                     <Box className={classes.section1}>
                         <Box className={classes.item}>
@@ -130,52 +130,36 @@ export default function Header() {
                                     <span>LinkdIn</span>
                                 </Box>
                                 <Box className={classes.socialIcon}>
-                                    <img src={Medium} alt="" className={classes.socialImage}></img>
-                                    <span>Medium</span>
-                                </Box>
-                                <Box className={classes.socialIcon}>
                                     <img src={Twitter} alt="" className={classes.socialImage}></img>
                                     <span>Twitter</span>
                                 </Box>
                             </Box>
                         </Box>
                         <Box className={classes.item}>
-                            <span>Product</span>
+                            <span>Wallet</span>
                             <ul>
-                                <li>Wallet</li>
+                                <li>Buy and Sell</li>
+                                <li>Save & Earn</li>
                                 <li>Exchange</li>
-                                <li>Learn</li>
-                                <li>Explorer</li>
-                                <li>Markets</li>
-                                <li>Prices</li>
-                                <li>Charts</li>
+                                <li>Swap</li>
+                                <li>Send and Receive</li>
                             </ul>
                         </Box>
                         <Box className={classes.item}>
-                            <span>Resources</span>
+                            <span>Information</span>
                             <ul>
-                                <li>Apis</li>
-                                <li>Status</li>
-                                <li>Open Source</li>
-                                <li>Research</li>
-                                <li>Privacy</li>
-                                <li>Support</li>
-                                <li>Blog</li>
+                                <li>About Us</li>
+                                <li>Terms of service</li>
+                                <li>Privacy Policy</li>
                             </ul>
-                        </Box>
-                        <Box className={classes.item}>
-                            <span>About</span>
-                            <ul>
-                                <li>Team</li>
-                                <li>Careers</li>
-                                <li>Press Center</li>
-                                <li>Prime</li>
-                                <li>Ventures</li>
-                                <li>Institutional</li>
-                            </ul>                            
                         </Box>
                     </Box>
                 </Box>
+            </Box>
+            <Box className="p-3" style={{paddingTop: "0", borderTop: "1px solid"}}>
+                <p style={{fontSize: "1rem", fontWeight: "bold"}}>
+                    Copyright © 2021 - Dependex.com. All rights reserved.
+                </p>
             </Box>
         </Box>
     );

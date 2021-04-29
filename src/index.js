@@ -14,16 +14,16 @@ const renderApp = preloadedState => {
 	const store = configureStore(preloadedState);
 	ReactDOM.render(
 		<React.StrictMode>
-		<Provider store={store}>
-			<Suspense fallback={<></>}>
-				<ThemeProvider theme={createMuiTheme()}>
-					<CssBaseline />
-					<Layout>
-						<Router />
-					</Layout>
-				</ThemeProvider>
-			</Suspense>
-		</Provider>
+			<Provider store={store}>
+				<Suspense fallback={<></>}>
+					<ThemeProvider theme={createMuiTheme()}>
+						<CssBaseline />
+						<Layout>
+							<Router />
+						</Layout>
+					</ThemeProvider>
+				</Suspense>
+			</Provider>
 		</React.StrictMode>,
 		document.getElementById('root')
 	);

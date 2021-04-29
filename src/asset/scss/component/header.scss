@@ -12,10 +12,22 @@
             min-width: 100px
         }
     }
+    .header-btn-item{
+        background:transparent;
+        color: white;
+        box-shadow: none;
+    }
     .header-auth-btn{
         background-color: white;
         color: #3375BB;
         margin-left: 0.5rem;
+    }
+    .header-badge{
+        background-color: orange;
+        height: 20px;
+        border-radius: 10px;
+        // margin-left: rem;
+        padding: 0 8px;
     }
 }
 

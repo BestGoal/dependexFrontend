@@ -1,13 +1,16 @@
 import React from "react"
 import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
+import QrCode from "../../asset/image/dashboard/qr-code.png"
+
+import Swap from "./exchange-cards/swap"
+import Buy from "./exchange-cards/buy"
+import Sell from "./exchange-cards/sell"
 
 function a11yProps(index) {
   return {
@@ -16,10 +19,36 @@ function a11yProps(index) {
   };
 }
 
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box p={3}>
+              {children}
+          </Box>
+        )}
+      </div>
+    );
+  }
+  
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+  };
+
 export default function SectionOne() {
 
     const [value, setValue] = React.useState(0);
-    const [mode, setMode] = React.useState(0);
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -32,58 +61,40 @@ export default function SectionOne() {
                         <AppBar position="static" className="bg-transparent box-shadow-none exchange-card-appbar">
                             <Tabs value={value} onChange={handleChange}>
                                 <Tab className="card-item" label="BUY" {...a11yProps(0)} />
-                                <Tab className="card-item" label="EXCHANGE" {...a11yProps(1)} />
+                                <Tab className="card-item" label="SWAP" {...a11yProps(1)} />
                                 <Tab className="card-item" label="SELL" {...a11yProps(2)} />
                                 <Tab className="card-item" label="SAVE & EARN" {...a11yProps(3)} />
                             </Tabs>
                         </AppBar>
-                        <Box className="d-flex pt-1">
-                            <Box className="exchange-card-rate-bar">
-                                <Button className={!mode && "select-item"} onClick={() => setMode(!mode)}>Floating Rate</Button>
-                                <Button className={mode && "select-item"} onClick={() => setMode(!mode)}>Fixed Rate</Button>
-                            </Box>
-                        </Box>
-                        <Box>
-                            <Box className="exchange-card-input-header d-flex justify-content-start align-items-center">
-                                <TextField
-                                    label="You send"
-                                    placeholder="0"
-                                    margin="normal"
-                                    variant="filled"
-                                    type="number"
-                                    className="exchange-card-input"
-                                />
-                                <Button>
-                                    <p>BTC</p>
-                                    <p>BTC</p>
-                                </Button>
-                            </Box>
-                            <Box>
-                                <TextField
-                                    label="You get approximately"
-                                    placeholder="0"
-                                    margin="normal"
-                                    variant="filled"
-                                    type="number"
-                                    className="exchange-card-input"
-                                />
-                            </Box>
-                        </Box>
+                        <TabPanel value={value} index={0}>
+                            <Buy />
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <Swap />
+                        </TabPanel>
+                        <TabPanel value={value} index={2}>
+                            <Sell />
+                        </TabPanel>
+                        <TabPanel value={value} index={3}>
+                            Redirect to Login Page
+                        </TabPanel>
                     </CardContent>
-                    <CardActions>
-                        <Button variant="contained">
-                            Exchange now
-                        </Button>
-                    </CardActions>
                 </Card>
                 <Box className="pl-5">
                     <Box>
-                        <p className="dashboard-section1-fletter">The World's Most Popular Way to Buy, Hold, and Use Crypto</p>
-                        <p className="dashboard-section1-sletter">Trusted by 71M Wallets - with Over $620 Billion in Transactions - Since 2013</p>
+                        <p className="dashboard-section1-fletter">The World's Best Multi-Crypto Wallet You Can Depend On.</p>
+                        <p className="dashboard-section1-sletter">• Buy Cryptocurrencies at lowest cost</p>
+                        <p className="dashboard-section1-sletter">• Get Free Crypto when you create wallet and active account</p>
+                        <p className="dashboard-section1-sletter">• Store 60 cryptocurrencies in a military grade secured wallet</p>
+                        <p className="dashboard-section1-sletter">• Earn 20% APR interest on your crypto savings</p>
+                        <p className="dashboard-section1-sletter">• Instant exchange trading and swapping within your wallet</p>
+                        <p className="dashboard-section1-sletter">• Only you can access your wallet with your private keys</p>
+                        <p className="dashboard-section1-sletter">• Excellent customer support</p>
                     </Box>
-                    <Box className="pt-1">
-                        <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/app-store.svg"} alt="" className="crusor-pointer"></img>
-                        <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/google-play.svg"} alt="" className="ml-1 crusor-pointer"></img>
+                    <Box className="pt-1 d-flex">
+                        <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/app-store.svg"} alt="" className="crusor-pointer align-items-center"></img>
+                        <img src={"https://www.f-cdn.com/assets/main/en/assets/footer/google-play.svg"} alt="" className="ml-1 crusor-pointer align-items-center"></img>
+                        <img src={QrCode} alt="" className="qr-image ml-1 crusor-pointer align-items-center"></img>
                     </Box>
                 </Box>
             </Box>
