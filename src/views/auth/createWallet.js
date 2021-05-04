@@ -1,10 +1,11 @@
 import React from "react"
 import { Box, Button, Card, CardContent, TextField, Typography } from "@material-ui/core"
+import { history } from "../../history"
 
 export default function CommingSoon() {
   return (
     <Box className="login-page d-flex justify-content-between align-items-center">
-      <Typography className="font-weight-bold color-white pt-3" variant="h4">
+      <Typography className="font-weight-bold color-white pt-3 crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
         Dependex.com
       </Typography>
       <Box className="color-white text-align-center">

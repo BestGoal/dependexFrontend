@@ -1,10 +1,11 @@
 import React from "react"
 import { Box, Button, Card, CardContent, TextField, Typography } from "@material-ui/core"
+import { history } from "../../history";
 
 export default function CommingSoon() {
   return (
     <Box className="login-page d-flex justify-content-between align-items-center">
-      <Typography className="font-weight-bold color-white pt-3" variant="h4">
+      <Typography className="font-weight-bold color-white pt-3 crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
         Dependex.com
       </Typography>
       <Box>
@@ -43,7 +44,7 @@ export default function CommingSoon() {
           </CardContent>
         </Card>
         <Box>
-          <h2 className="text-align-center color-gray">Don't have a wallet ? <b className="crusor-pointer color-white">Sign Up</b></h2>
+          <h2 className="text-align-center color-gray">Don't have a wallet ? <b className="crusor-pointer color-white" onClick={()=>history.push("/create-wallet")}>Create wallet</b></h2>
         </Box>
       </Box>
       <Typography className="font-weight-bold color-white p-3">

@@ -12,7 +12,7 @@ export default function Header() {
         <AppBar position="static" className="header-app-bar bg-transparent box-shadow-none">
             <Toolbar className="d-flex justify-content-between">
                 <Box className="d-flex align-items-center">
-                    <Typography className="font-weight-bold" variant="h4">
+                    <Typography className="font-weight-bold crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
                         Dependex.com
                     </Typography>
                 </Box>
@@ -27,7 +27,7 @@ export default function Header() {
                         <Button className="header-btn-item" variant="contained">Affiliate (lang api)</Button>
                     </Box>
                     <Box>
-                        <Button className="header-auth-btn" variant="contained"> Create wallet </Button>
+                        <Button className="header-auth-btn" variant="contained" onClick={()=>history.push("/create-wallet")}> Create wallet </Button>
                         <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained" onClick={()=>history.push("login")}> Login </Button>
                     </Box>
                 </Box>
