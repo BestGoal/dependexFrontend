@@ -16,6 +16,9 @@
         background:transparent;
         color: white;
         box-shadow: none;
+        &:hover{
+            background:transparent;
+        }
     }
     .header-auth-btn{
         background-color: white;

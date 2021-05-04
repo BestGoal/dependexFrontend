@@ -7,8 +7,9 @@ import { ContextLayout } from "./layout";
 const Login = lazy(() => import("./views/auth/login"));
 const CreateWallet = lazy(() => import("./views/auth/createWallet"));
 const Dashboard = lazy(() => import("./views/dashboard/index"));
+const Home = lazy(() => import("./views/home/index"));
 
-const RouteConfig = ({ component: Component, MainLayout, FullLayout, ...rest }) => (
+const RouteConfig = ({ component: Component, MainLayout, HomeLayout, ...rest }) => (
   <Route
     {...rest}
     render={props => {
@@ -16,7 +17,7 @@ const RouteConfig = ({ component: Component, MainLayout, FullLayout, ...rest }) 
         <ContextLayout.Consumer>
           {context => {
             let LayoutTag = MainLayout === true ? context.MainLayout : (
-              FullLayout === true ? context.FullLayout : context.VerticalLayout
+              HomeLayout === true ? context.HomeLayout : context.VerticalLayout
             );
             return (
               <LayoutTag {...props}>
@@ -58,10 +59,10 @@ class AppRouter extends React.Component {
         <Switch>
           {/* <RequireAuth> */}
             <AppRoute path="/" exact component={Dashboard} MainLayout />
-            <AppRoute path="/login" component={Login} FullLayout />
-            <AppRoute path="/create-wallet" component={CreateWallet} FullLayout />
+            <AppRoute path="/login" component={Login} MainLayout />
+            <AppRoute path="/create-wallet" component={CreateWallet} MainLayout />
             <AppRoute path="/dashboard" component={Dashboard} MainLayout />
-            {/* <AppRoute component={CommingSoon} /> */}
+            <AppRoute path="/home" component={Home} HomeLayout />
           {/* </RequireAuth> */}
         </Switch>
       </Router>

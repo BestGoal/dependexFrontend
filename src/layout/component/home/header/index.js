@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Media from "react-media";
-import Desktop from "./navComponent/desktop"
-import Mobile from "./navComponent/mobile"
+import Desktop from "./desktop"
+import Mobile from "./mobile"
 
 export default function Header() {
 

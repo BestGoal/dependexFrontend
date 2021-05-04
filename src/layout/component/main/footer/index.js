@@ -1,11 +1,10 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import FaceBook from "../../../asset/image/section/facebook.jpg"
-import Instagram from "../../../asset/image/section/instagram.png"
-import LinkdIn from "../../../asset/image/section/linkedin.jpg"
-// import Medium from "../../../asset/image/section/medium-plain.png"
-import Twitter from "../../../asset/image/section/twitter.jpg"
+import FaceBook from "../../../../asset/image/section/facebook.jpg"
+import Instagram from "../../../../asset/image/section/instagram.png"
+import LinkdIn from "../../../../asset/image/section/linkedin.jpg"
+import Twitter from "../../../../asset/image/section/twitter.jpg"
 
 const useStyles = makeStyles((theme) => ({
     firstTop: {
