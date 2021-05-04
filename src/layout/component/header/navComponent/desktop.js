@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { history } from "../../../../history"
 
 export default function Header() {
 
@@ -27,7 +28,7 @@ export default function Header() {
                     </Box>
                     <Box>
                         <Button className="header-auth-btn" variant="contained"> Create wallet </Button>
-                        <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained"> Login </Button>
+                        <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained" onClick={()=>history.push("login")}> Login </Button>
                     </Box>
                 </Box>
             </Toolbar>

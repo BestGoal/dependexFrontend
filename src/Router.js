@@ -5,17 +5,19 @@ import { history } from "./history";
 import { ContextLayout } from "./layout";
 
 const Login = lazy(() => import("./views/auth/login"));
+const CreateWallet = lazy(() => import("./views/auth/createWallet"));
 const Dashboard = lazy(() => import("./views/dashboard/index"));
-const CommingSoon = lazy(() => import("./views/commingSoon/index"));
 
-const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
+const RouteConfig = ({ component: Component, MainLayout, FullLayout, ...rest }) => (
   <Route
     {...rest}
     render={props => {
       return (
         <ContextLayout.Consumer>
           {context => {
-            let LayoutTag = fullLayout === true ? context.FullLayout : context.VerticalLayout;
+            let LayoutTag = MainLayout === true ? context.MainLayout : (
+              FullLayout === true ? context.FullLayout : context.VerticalLayout
+            );
             return (
               <LayoutTag {...props}>
                 <Suspense fallback={<></>}>
@@ -37,7 +39,7 @@ const RequireAuth = (data) => {
   // if (!isAuthorized && url_path() !== LOGIN_URL) {
   //   return <Redirect to={LOGIN_URL}/>;
   // }
-  for(let i in data.children){
+  for(let i in data.children) {
     if(data.children[i].props.path === data.location.pathname) {
       return data.children.slice(0, data.children.length-1);
     }
@@ -54,12 +56,13 @@ class AppRouter extends React.Component {
     return (
       <Router history={history}>
         <Switch>
-          <RequireAuth>
-            <AppRoute path="/" exact component={Dashboard} fullLayout />
-            <AppRoute path={"/login"} component={Login} fullLayout />
-            <AppRoute path="/Dashboard" component={Dashboard} />
-            <AppRoute component={CommingSoon} />
-          </RequireAuth>
+          {/* <RequireAuth> */}
+            <AppRoute path="/" exact component={Dashboard} MainLayout />
+            <AppRoute path="/login" component={Login} FullLayout />
+            <AppRoute path="/create-wallet" component={CreateWallet} FullLayout />
+            <AppRoute path="/dashboard" component={Dashboard} MainLayout />
+            {/* <AppRoute component={CommingSoon} /> */}
+          {/* </RequireAuth> */}
         </Switch>
       </Router>
     )

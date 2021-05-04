@@ -6,7 +6,7 @@ import HomeDex from "../../asset/image/dashboard/home_dex.png"
 import HomeSecurity from "../../asset/image/dashboard/home_security.png"
 import HomePreview from "../../asset/image/dashboard/dapp_preview.png"
 
-export default function SectionTwo() {
+export default function SectionThree() {
     return (
         <Box className="dashboard-section1-nav dash-sec4">
             <Box className="d-flex justify-content-center p-2 align-items-center">

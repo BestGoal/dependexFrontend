@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import SocialImage from "../../asset/image/dashboard/social.svg"
 import QrCode from "../../asset/image/dashboard/qr-code.png"
 
-export default function SectionTwo() {
+export default function SectionFour() {
     return (
         <Box className="dash-sec6">
             <Box className="d-flex justify-content-center">

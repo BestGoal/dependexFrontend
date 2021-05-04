@@ -1,0 +1,28 @@
+.login-page{
+    background: linear-gradient(to bottom right,#061121 50%,#105BAA 100%);
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    .login-input{
+        min-width: 400px;
+    }
+    .login-btn{
+        width: 100%;
+        background: rgb(12, 108, 242);
+        color: white;
+        padding: 15px;
+        &:hover{
+            background: rgb(10, 86, 193);
+        }
+    }
+    .register-header-letter1{
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+    }
+    .register-header-letter2{
+        font-size: 1.6rem;
+        padding: 0;
+        margin: 0;
+    }
+}

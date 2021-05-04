@@ -4,7 +4,7 @@ export default function CommingSoon() {
 
   return (
     <React.Fragment>
-      Hello World!
+      Comming Soon
     </React.Fragment>
   )
 }

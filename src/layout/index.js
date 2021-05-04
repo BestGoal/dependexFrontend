@@ -1,6 +1,7 @@
 import React from "react"
 import VerticalLayout from "./VerticalLayout"
-import FullLayout from "./FullpageLayout"
+import MainLayout from "./mainLayout"
+import FullLayout from "./FullLayout"
 
 const ContextLayout = React.createContext()
 class Layout extends React.Component {
@@ -8,6 +9,7 @@ class Layout extends React.Component {
         return (
             <ContextLayout.Provider
                 value={{
+                    MainLayout,
                     FullLayout,
                     VerticalLayout
                 }}
