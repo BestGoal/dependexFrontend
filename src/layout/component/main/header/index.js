@@ -7,7 +7,7 @@ import Mobile from "./mobile"
 export default function Header() {
 
     return (
-        <Box className="position-fixed w-100 z-index-999" style={{background: '#061121'}}>
+        <Box className="position-fixed w-100 z-index-999 bg-theme">
 			<Media
 				queries={{Mobile : "(max-width: 768px)", Tablet : "(min-width: 769px)"}}>
 				{matches => (

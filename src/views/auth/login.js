@@ -1,8 +1,8 @@
 import React from "react"
 import { Box, Button, Card, CardContent, TextField } from "@material-ui/core"
 import { history } from "../../history";
-import FooterAndroid from "../../asset/image/section/footer-android.png"
-import FooterIos from "../../asset/image/section/footer-ios.png"
+import FooterAndroid from "../../asset/image/footer-android.png"
+import FooterIos from "../../asset/image/footer-ios.png"
 
 export default function Login() {
   return (
@@ -41,8 +41,8 @@ export default function Login() {
               <Button className="login-btn" variant="contained" onClick={()=>history.push("/home")}> Login </Button>
             </Box>
             <Box className="d-flex justify-content-between mt-1">
-              <img style={{width: "180px"}} src={FooterAndroid} alt=""></img>
-              <img style={{width: "180px"}} src={FooterIos} alt=""></img>
+              <img src={FooterAndroid} alt="" className="w-10"></img>
+              <img src={FooterIos} alt="" className="w-10"></img>
             </Box>
           </CardContent>
         </Card>

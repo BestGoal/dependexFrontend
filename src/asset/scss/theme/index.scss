@@ -10,7 +10,14 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #8a8989;
 }
-
 section {
     background-color: #FFFFFF;
+}
+.main-width{
+    width: 1400px;
+}
+@media(max-width: 1100px) {
+    .main-width{
+        max-width: 100% !important;
+    }
 }

@@ -1,10 +1,10 @@
 import { Box } from "@material-ui/core"
 import React from "react"
 
-export default function Home() {
+export default function Sidebar() {
     return (
         <Box>
-            {/* <h1>Hello World!</h1> */}
+            Hello World!
         </Box>
     )
 }

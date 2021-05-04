@@ -34,6 +34,23 @@
     }
 }
 
+.header-app-bar-home{
+    margin: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    .header-item{
+        border-right: 1px solid rgb(53, 63, 82);
+    }
+    button{
+        padding: 0 !important;
+    }
+}
+
+@media(max-width: 1100px) {
+    .header-app-bar{
+        max-width: 100%;
+    }
+}
 
 // .header-card {
 //     position: absolute;
@@ -55,11 +72,6 @@
 //         }
 //     }
 // }
-@media(max-width: 1100px) {
-    .header-app-bar{
-        max-width: 100%;
-    }
-}
 // @media(max-width: 510px) {
 //     .header-card{
 //         width: 95vw;
