@@ -7,9 +7,11 @@ export default function FullpageLayout({ children }) {
     return (
         <Box>
             <Header />
-            <Box >
+            <Box className="pt-5 d-flex">
                 <Sidebar />
-                {children}
+                <Box className="p-1 home-container">
+                    {children}
+                </Box>
             </Box>
         </Box>
     );

@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Send, Email, SaveAlt, Security, Settings, Restore } from "@material-ui/icons"
+import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Send, Email, SaveAlt, Settings, Restore } from "@material-ui/icons"
 import { history } from "../../../../history"
 
 export default function Header() {
@@ -62,12 +62,6 @@ export default function Header() {
                     </Box>
                 </Box>
                 <Box className="d-flex justify-content-right align-items-center">
-                    <p className="header-item m-0 pr-1">
-                        <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
-                            <Security className="color-white" />
-                            <p className="color-white fs-1 m-0 font-weight-bold">Security</p>
-                        </Button>
-                    </p>
                     <p className="header-item m-0">
                         <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
                             <Restore className="color-white" />

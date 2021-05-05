@@ -1,0 +1,29 @@
+$sidebar-icon: rgb(12, 108, 242);
+$sidebar-color: rgb(13, 53, 120);
+$sidebar-item-color: #d8ebfd;
+$sidebar-item-a-color: #d8ebfd;
+
+.home-sidebar{
+    width: 250px;
+    .home-sidebar-list{
+        padding: 0 !important;
+        color: $sidebar-color;
+        font-weight: bold;
+        .home-sidebar-icon{
+            color: $sidebar-icon;
+        }
+        span{
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .Mui-selected{
+            background: $sidebar-item-color !important;
+            &:active{
+                background: $sidebar-item-a-color !important;
+            }
+        }
+    }
+}
+.home-container{
+    width: 100%;
+}

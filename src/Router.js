@@ -8,6 +8,8 @@ const Login = lazy(() => import("./views/auth/login"));
 const CreateWallet = lazy(() => import("./views/auth/createWallet"));
 const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Home = lazy(() => import("./views/home/index"));
+const Security = lazy(() => import("./views/security/index"));
+const Setting = lazy(() => import("./views/setting/index"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, ...rest }) => (
   <Route
@@ -63,6 +65,8 @@ class AppRouter extends React.Component {
             <AppRoute path="/create-wallet" component={CreateWallet} MainLayout />
             <AppRoute path="/dashboard" component={Dashboard} MainLayout />
             <AppRoute path="/home" component={Home} HomeLayout />
+            <AppRoute path="/security" component={Security} HomeLayout />
+            <AppRoute path="/setting" component={Setting} HomeLayout />
           {/* </RequireAuth> */}
         </Switch>
       </Router>
