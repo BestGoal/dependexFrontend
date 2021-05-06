@@ -65,7 +65,7 @@ export default function CreateWallet() {
                 color="primary"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
               />
-              <span className="pt-1">
+              <span>
                 By creating a wallet, I agree to Dependex's Terms of Service and Privacy Policy
               </span>              
             </Box>
