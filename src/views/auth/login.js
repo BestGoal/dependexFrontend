@@ -1,5 +1,9 @@
 import React from "react"
-import { Box, Button, Card, CardContent, TextField } from "@material-ui/core"
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import TextField from "@material-ui/core/TextField"
 import { history } from "../../history"
 import FooterAndroid from "../../asset/image/footer-android.png"
 import FooterIos from "../../asset/image/footer-ios.png"
@@ -7,15 +11,13 @@ import QrCode from "../../asset/image/dashboard/qr-code.png"
 
 export default function Login() {
   return (
-    <Box className="login-page d-flex justify-content-between align-items-center">
-      <Box className="color-white text-align-center mt-5 pt-5">
-        <p className="register-header-letter1">Securely Buy, Sell, and Store Crypto.</p>
-        <h2 className="register-header-letter2">Get Started by Signing In Now.</h2>
+    <Box className="login-page d-flex justify-content-between pt-5">
+      <Box className="color-white text-align-center pt-5">
+        <p className="register-header-letter1">Login To Your Dependex Wallet</p>
       </Box>
-      <Box>
-        <Card className="p-2">
+      <Box className="d-flex justify-content-center">
+        <Card className="p-1 login-card">
           <CardContent>
-            <h1>Welcome back</h1>
             <Box>
               <p className="p-0 m-0 font-weight-bold">Wallet Id</p>
               <TextField
@@ -39,17 +41,25 @@ export default function Login() {
               />
             </Box>
             <Box className="mt-1">
-              <Button className="login-btn" variant="contained" onClick={()=>history.push("/home")}> Login </Button>
+              <Button className="login-btn" variant="contained" onClick={() => history.push("/home")}> Login </Button>
             </Box>
-            <Box className="d-flex justify-content-between align-items-center">
-              <img src={FooterAndroid} alt="" className="w-10" />
-              <img src={FooterIos} alt="" className="w-10" />
-              <img src={QrCode} alt="" className="m-1 w-5" />
-            </Box>
+            <p className="m-0 pt-1">
+            Don't have a dependex wallet? <b className="crusor-pointer" onClick={() => history.push("/create-wallet")}>Please create your wallet.</b>
+            </p>
           </CardContent>
         </Card>
       </Box>
-      <h2 className="text-align-center color-gray">Don't have a wallet ? <b className="crusor-pointer color-white" onClick={()=>history.push("/create-wallet")}>Create wallet</b></h2>
+      <Box className="auth-footer d-flex justify-content-center p-2">
+        <Box>
+          <h3 className="ml-2">Download Dependex app now!</h3>
+          <p className="ml-2">The multi-crypto wallet you can depend on.</p>
+        </Box>
+        <Box className="d-flex justify-content-between align-items-center">
+          <img src={FooterAndroid} alt="" className="w-10"></img>
+          <img src={FooterIos} alt="" className="w-10"></img>
+          <img src={QrCode} alt="" className="m-1 w-5"></img>
+        </Box>
+      </Box>
     </Box>
   )
 }

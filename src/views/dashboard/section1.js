@@ -50,7 +50,7 @@ export default function SectionOne() {
                     <Box>
                         <p className="color-white font-weight-bold m-0 fs-3 mb-1">The World's Best Multi-Crypto Wallet You Can Depend On.</p>
                         <p className="color-white fs-1 m-0">• Buy Cryptocurrencies at lowest cost</p>
-                        <p className="color-white fs-1 m-0">• Get Free Crypto when you create wallet and active account</p>
+                        <p className="color-white fs-1 m-0">• Get Free Crypto when you create an active wallet</p>
                         <p className="color-white fs-1 m-0">• Store 60 cryptocurrencies in a military grade secured wallet</p>
                         <p className="color-white fs-1 m-0">• Earn 20% APR interest on your crypto savings</p>
                         <p className="color-white fs-1 m-0">• Instant exchange trading and swapping within your wallet</p>

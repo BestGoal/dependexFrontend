@@ -5,7 +5,7 @@ import Header from "./component/main/header/index"
 export default function AuthLayout({ children }) {
     return (
         <Box>
-            <Header></Header>
+            <Header />
             {children}
         </Box>
     )

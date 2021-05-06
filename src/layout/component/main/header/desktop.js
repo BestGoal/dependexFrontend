@@ -14,7 +14,7 @@ export default function Header() {
             <Toolbar className="d-flex justify-content-between">
                 <Box className="d-flex align-items-center">
                     <Typography className="font-weight-bold crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
-                        Dependex.com
+                        Dependex
                     </Typography>
                 </Box>
                 <Box className="d-flex justify-content-right align-items-center">
