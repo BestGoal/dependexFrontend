@@ -1,10 +1,10 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import Badge from '@material-ui/core/Badge';
+import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
+import Badge from '@material-ui/core/Badge'
 import { history } from "../../../../history"
 
 export default function Header() {
@@ -34,5 +34,5 @@ export default function Header() {
                 </Box>
             </Toolbar>
         </AppBar>
-    );
+    )
 }

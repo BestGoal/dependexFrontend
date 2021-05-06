@@ -6,4 +6,4 @@ const VerticalLayout = ({ children }) => {
   )
 }
 
-export default VerticalLayout;
+export default VerticalLayout

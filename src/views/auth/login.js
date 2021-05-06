@@ -1,8 +1,9 @@
 import React from "react"
 import { Box, Button, Card, CardContent, TextField } from "@material-ui/core"
-import { history } from "../../history";
+import { history } from "../../history"
 import FooterAndroid from "../../asset/image/footer-android.png"
 import FooterIos from "../../asset/image/footer-ios.png"
+import QrCode from "../../asset/image/dashboard/qr-code.png"
 
 export default function Login() {
   return (
@@ -16,7 +17,7 @@ export default function Login() {
           <CardContent>
             <h1>Welcome back</h1>
             <Box>
-              <p className="p-0 font-weight-bold">Wallet Id</p>
+              <p className="p-0 m-0 font-weight-bold">Wallet Id</p>
               <TextField
                 className="login-input"
                 type="string"
@@ -27,7 +28,7 @@ export default function Login() {
               />
             </Box>
             <Box>
-              <p className="p-0 font-weight-bold">Password</p>
+              <p className="p-0 m-0 mt-1 font-weight-bold">Password</p>
               <TextField
                 className="login-input"
                 type="string"
@@ -40,9 +41,10 @@ export default function Login() {
             <Box className="mt-1">
               <Button className="login-btn" variant="contained" onClick={()=>history.push("/home")}> Login </Button>
             </Box>
-            <Box className="d-flex justify-content-between mt-1">
-              <img src={FooterAndroid} alt="" className="w-10"></img>
-              <img src={FooterIos} alt="" className="w-10"></img>
+            <Box className="d-flex justify-content-between align-items-center">
+              <img src={FooterAndroid} alt="" className="w-10" />
+              <img src={FooterIos} alt="" className="w-10" />
+              <img src={QrCode} alt="" className="m-1 w-5" />
             </Box>
           </CardContent>
         </Card>

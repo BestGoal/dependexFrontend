@@ -1,9 +1,9 @@
 import React from "react"
-import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp"
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown"
 import SearchIcon from "@material-ui/icons/Search"
@@ -12,8 +12,8 @@ import LockOpen from "@material-ui/icons/LockOpen"
 
 export default function SectionOne() {
 
-    const [money1, setMoney1] = React.useState(false);
-    const [money2, setMoney2] = React.useState(false);
+    const [money1, setMoney1] = React.useState(false)
+    const [money2, setMoney2] = React.useState(false)
 
   return (
     <React.Fragment>

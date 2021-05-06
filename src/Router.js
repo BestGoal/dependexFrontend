@@ -11,7 +11,7 @@ const Home = lazy(() => import("./views/home/index"));
 const Security = lazy(() => import("./views/security/index"));
 const Setting = lazy(() => import("./views/setting/index"));
 
-const RouteConfig = ({ component: Component, MainLayout, HomeLayout, ...rest }) => (
+const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
     {...rest}
     render={props => {
@@ -19,7 +19,9 @@ const RouteConfig = ({ component: Component, MainLayout, HomeLayout, ...rest }) 
         <ContextLayout.Consumer>
           {context => {
             let LayoutTag = MainLayout === true ? context.MainLayout : (
-              HomeLayout === true ? context.HomeLayout : context.VerticalLayout
+              HomeLayout === true ? context.HomeLayout : (
+                AuthLayout === true ? context.AuthLayout : context.VerticalLayout
+              )
             );
             return (
               <LayoutTag {...props}>
@@ -61,8 +63,8 @@ class AppRouter extends React.Component {
         <Switch>
           {/* <RequireAuth> */}
             <AppRoute path="/" exact component={Dashboard} MainLayout />
-            <AppRoute path="/login" component={Login} MainLayout />
-            <AppRoute path="/create-wallet" component={CreateWallet} MainLayout />
+            <AppRoute path="/login" component={Login} AuthLayout />
+            <AppRoute path="/create-wallet" component={CreateWallet} AuthLayout />
             <AppRoute path="/dashboard" component={Dashboard} MainLayout />
             <AppRoute path="/home" component={Home} HomeLayout />
             <AppRoute path="/security" component={Security} HomeLayout />

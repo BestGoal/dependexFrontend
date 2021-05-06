@@ -2,6 +2,7 @@ import React from "react"
 import VerticalLayout from "./VerticalLayout"
 import MainLayout from "./mainLayout"
 import HomeLayout from "./HomeLayout"
+import AuthLayout from "./AuthLayout"
 
 const ContextLayout = React.createContext()
 class Layout extends React.Component {
@@ -11,6 +12,7 @@ class Layout extends React.Component {
                 value={{
                     MainLayout,
                     HomeLayout,
+                    AuthLayout,
                     VerticalLayout
                 }}
             >

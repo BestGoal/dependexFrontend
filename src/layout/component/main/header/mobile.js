@@ -1,14 +1,14 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
 import Clear from "@material-ui/icons/Clear"
 import WalletIcon from "../../../../asset/image/section/wallet-icon.png"
 import ExchangeIcon from "../../../../asset/image/section/exchange-icon.png"
@@ -19,7 +19,7 @@ export default function Header() {
 
     const [mode, setMode] = React.useState(false)
     const gotoPage = (url) => {
-        setMode(false);
+        setMode(false)
         history.push(url)
     }
 
@@ -87,5 +87,5 @@ export default function Header() {
                 }
             </Toolbar>
         </AppBar>
-    );
+    )
 }

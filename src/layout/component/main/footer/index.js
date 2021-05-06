@@ -1,6 +1,6 @@
-import React from 'react';
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react'
+import Box from '@material-ui/core/Box'
+import { makeStyles } from '@material-ui/core/styles'
 import FaceBook from "../../../../asset/image/section/facebook.jpg"
 import Instagram from "../../../../asset/image/section/instagram.png"
 import LinkdIn from "../../../../asset/image/section/linkedin.jpg"
@@ -104,10 +104,10 @@ const useStyles = makeStyles((theme) => ({
             paddingLeft:"1rem"
         }
     }
-}));
+}))
 
 export default function Header() {
-    const classes = useStyles();
+    const classes = useStyles()
     return (
         <Box className={classes.firstTop}>
             <Box className={classes.topSection} style={{paddingBottom: "0"}}>
@@ -161,5 +161,5 @@ export default function Header() {
                 </p>
             </Box>
         </Box>
-    );
+    )
 }

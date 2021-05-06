@@ -1,18 +1,18 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Button from '@material-ui/core/Button'
 import Clear from "@material-ui/icons/Clear"
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search'
+import InputBase from '@material-ui/core/InputBase'
 import WalletIcon from "../../../../asset/image/section/wallet-icon.png"
 import ExchangeIcon from "../../../../asset/image/section/exchange-icon.png"
 import ExplorerIcon from "../../../../asset/image/section/explorer-icon.png"
@@ -64,11 +64,11 @@ const useStyles = makeStyles((theme) => ({
         width: "50%",
         padding: "0.8rem"
     }
-}));
+}))
 
 export default function Header() {
 
-    const classes = useStyles();
+    const classes = useStyles()
     const [mode, setMode] = React.useState(false)
 
     return (
@@ -144,5 +144,5 @@ export default function Header() {
                 }
             </Toolbar>
         </AppBar>
-    );
+    )
 }

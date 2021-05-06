@@ -1,9 +1,9 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Send, Email, SaveAlt, Settings, Restore, ExitToApp } from "@material-ui/icons"
 import { history } from "../../../../history"
 
@@ -80,5 +80,5 @@ export default function Header() {
                 </Box>
             </Toolbar>
         </AppBar>
-    );
+    )
 }
