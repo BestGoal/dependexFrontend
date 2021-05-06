@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
 import { history } from "../../../../history"
 
 export default function Header() {
@@ -21,14 +22,14 @@ export default function Header() {
                         <Button className="header-btn-item" variant="contained">Exchange</Button>
                         <Button className="header-btn-item" variant="contained">
                             Get Free Crypto
-                            <span className="align-items-center header-badge">New</span>
                         </Button>
+                        <Badge className="header-badge" badgeContent={"New"} color="secondary" />
                         <Button className="header-btn-item" variant="contained">Earn +20% APR</Button>
                         <Button className="header-btn-item" variant="contained">Affiliate (lang api)</Button>
                     </Box>
                     <Box>
                         <Button className="header-auth-btn" variant="contained" onClick={()=>history.push("/create-wallet")}> Create wallet </Button>
-                        <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained" onClick={()=>history.push("login")}> Login </Button>
+                        <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained" onClick={()=>history.push("/login")}> Login </Button>
                     </Box>
                 </Box>
             </Toolbar>

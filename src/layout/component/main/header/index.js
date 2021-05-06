@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <Box className="position-fixed w-100 z-index-999 bg-theme">
 			<Media
-				queries={{Mobile : "(max-width: 768px)", Tablet : "(min-width: 769px)"}}>
+				queries={{Mobile : "(max-width: 1069px)", Tablet : "(min-width: 1070px)"}}>
 				{matches => (
 					<>
 						{matches.Tablet && 

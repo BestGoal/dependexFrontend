@@ -5,9 +5,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/Home';
 import SecurityIcon from '@material-ui/icons/Security';
 import SettingsIcon from '@material-ui/icons/Settings';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 import { history } from "../../../../history"
 
@@ -19,6 +21,15 @@ export default function Sidebar() {
 
     return (
         <Box className="home-sidebar">
+            <Box className="d-flex p-1">
+                <Box>
+                    <p className="m-0 font-weight-bold">Total Balance</p>
+                    <h1 className="m-0">$ 0.00</h1>
+                </Box>
+                <Box>
+                    {/* <Button variant="contained"><ExpandMore /></Button> */}
+                </Box>
+            </Box>
             <List className="home-sidebar-list" component="nav" aria-label="main mailbox folders">
                 <ListItem 
                     button

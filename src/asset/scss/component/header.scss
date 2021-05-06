@@ -14,23 +14,15 @@
     }
     .header-btn-item{
         background:transparent;
-        color: white;
+        color: $white;
         box-shadow: none;
         &:hover{
             background:transparent;
         }
     }
-    .header-auth-btn{
-        background-color: white;
-        color: #3375BB;
-        margin-left: 0.5rem;
-    }
     .header-badge{
-        background-color: orange;
-        height: 20px;
-        border-radius: 10px;
-        // margin-left: rem;
-        padding: 0 8px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 }
 
@@ -46,34 +38,46 @@
     }
 }
 
-@media(max-width: 1100px) {
+@media(max-width: 1130px) {
     .header-app-bar{
         max-width: 100%;
+        .header-btn-item{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .header-badge{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
     }
 }
 
-// .header-card {
-//     position: absolute;
-//     top: 0;
-//     right: 0.5rem;
-//     width: 500px;
-//     .border-solid-1{
-//         border-bottom: 1px solid rgb(240, 242, 247);
-//     }
-//     .header-mobile-item-img{
-//         display: flex;
-//         align-items: center;
-//         padding: 1rem;
-//     }
-//     .header-mobile-item-letter{
-//         padding: 1rem;
-//         h3,p{
-//             margin: 0;
-//         }
-//     }
-// }
-// @media(max-width: 510px) {
-//     .header-card{
-//         width: 95vw;
-//     }
-// }
+.header-card {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    width: 500px;
+    .border-solid-1{
+        border-bottom: 1px solid rgb(240, 242, 247);
+    }
+    .header-mobile-item-img{
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+    .header-mobile-item-letter{
+        padding: 1rem;
+        h3,p{
+            margin: 0;
+        }
+    }
+    .mobile-auth-btn{
+        width: 50%;
+        padding: 0.8rem;
+    }
+}
+@media(max-width: 510px) {
+    .header-card{
+        width: 95vw;
+    }
+}

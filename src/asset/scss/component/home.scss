@@ -1,10 +1,5 @@
-$sidebar-icon: rgb(12, 108, 242);
-$sidebar-color: rgb(13, 53, 120);
-$sidebar-item-color: #d8ebfd;
-$sidebar-item-a-color: #d8ebfd;
-
 .home-sidebar{
-    width: 250px;
+    width: 350px;
     .home-sidebar-list{
         padding: 0 !important;
         color: $sidebar-color;
@@ -26,4 +21,38 @@ $sidebar-item-a-color: #d8ebfd;
 }
 .home-container{
     width: 100%;
+    .home-border-item{
+        border: 2px solid $home-card-border-color;
+        .home-card-content{
+            padding-bottom: 0.5rem;
+            height: 130px;
+        }
+        .home-balance-type{
+            color: $home-balance-type-color;
+        }
+        .home-balance-money{
+            color: $home-balance-money-color;
+        }
+        .home-balance-icon-p{
+            background-color: $home-balance-icon-bg-color;
+            border-radius: 2rem;
+            width: 3em;
+            height: 3em;
+            .home-balance-icon{
+                width: 80%;
+                height: 80%;
+                color: $sidebar-icon;
+            }
+        }
+        .home-currency-icon-p{
+            border-radius: 2rem;
+            width: 3em;
+            height: 3em;
+            .home-balance-icon{
+                width: 80%;
+                height: 80%;
+                color: $sidebar-icon;
+            }
+        }
+    }
 }
