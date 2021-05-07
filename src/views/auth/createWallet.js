@@ -14,7 +14,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 export default function CreateWallet() {
   return (
     <Box className="login-page d-flex justify-content-between pt-4">
-      <Box className="color-white text-align-center pt-3">
+      <Box className="color-white text-align-center mt-2 mb-4">
         <p className="register-header-letter1">Securely Buy Sell and Store Crypto.</p>
         <h2 className="register-header-letter2">Create Your Dependex Multi-Crypto Wallet.</h2>
       </Box>
