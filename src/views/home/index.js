@@ -127,7 +127,7 @@ export default function Home() {
                                 <AttachMoney className="home-balance-icon" />
                             </Box>
                             <Box className="ml-1">
-                                <Typography variant="h5" className="font-weight-bold home-balance-type">Asset Balance</Typography>                        
+                                <Typography variant="h5" className="font-weight-bold home-balance-type">Crypto Balance</Typography>                        
                                 <Typography variant="h5" className="home-balance-money">$ 0.00</Typography>
                             </Box>
                         </CardContent>

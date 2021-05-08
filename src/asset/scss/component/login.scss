@@ -1,12 +1,14 @@
 .login-page{
     background: linear-gradient(to bottom right,#061121 50%,#105BAA 100%);
+    flex-direction: column;
+    height: 100vh;
     .register-header-letter1{
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding: 0;
         margin: 0;
     }
     .register-header-letter2{
-        font-size: 1.3rem;
+        font-size: 1rem;
         padding: 0;
         margin: 0;
     }
@@ -31,7 +33,8 @@
             height: 50px
         }
     }
-    .auth-footer{
-        background-color: white;
-    }
+}
+.auth-footer{
+    background-color: white;
+    margin-top: 0.2rem;
 }

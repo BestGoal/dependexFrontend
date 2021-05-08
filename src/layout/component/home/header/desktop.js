@@ -18,43 +18,43 @@ export default function Header() {
                     </Typography>
                     <Box className="d-flex justify-content-start align-items-center ml-5">
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <ShoppingCart className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Buy</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <AttachMoney className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Sell</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <SwapHorizontalCircle className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Exchange</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <SwapCalls className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Swap</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <Send className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Send</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <Email className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Receive</p>
                             </Button>
                         </p>
                         <p className="m-0 pl-1 pr-1">
-                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                            <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
                                 <SaveAlt className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Save & Earn</p>
                             </Button>

@@ -60,6 +60,17 @@ export default function Sidebar() {
                     </ListItemIcon>
                     <ListItemText primary="Setting" />
                 </ListItem>
+                <Divider />
+                <ListItem 
+                    button
+                    selected={history.location.pathname === "/activity"}
+                    onClick={() => handleListItemClick("/activity")}
+                >
+                    <ListItemIcon>
+                        <SettingsIcon className="home-sidebar-icon" />
+                    </ListItemIcon>
+                    <ListItemText primary="Activities" />
+                </ListItem>
             </List>
         </Box>
     )
