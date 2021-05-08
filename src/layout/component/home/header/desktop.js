@@ -4,9 +4,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Send, Email, SaveAlt, Settings, Restore, ExitToApp } from "@material-ui/icons"
+import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Settings, Restore, ExitToApp } from "@material-ui/icons"
 import { history } from "../../../../history"
-import { FaUpload } from "react-icons/fa";
+import { FaUpload, FaDownload, FaWallet } from "react-icons/fa";
 
 export default function Header() {
 
@@ -44,19 +44,19 @@ export default function Header() {
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
                             <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
-                                <Send className="color-white" />
+                                <FaUpload className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Send</p>
                             </Button>
                         </p>
                         <p className="m-0 header-item pl-1 pr-1">
                             <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
-                                <Email className="color-white" />
+                                <FaDownload className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Receive</p>
                             </Button>
                         </p>
                         <p className="m-0 pl-1 pr-1">
                             <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">
-                                <SaveAlt className="color-white" />
+                                <FaWallet className="color-white" />
                                 <p className="color-white fs-1 m-0 font-weight-bold">Save & Earn</p>
                             </Button>
                         </p>
