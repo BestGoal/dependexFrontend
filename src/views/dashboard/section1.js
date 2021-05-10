@@ -21,7 +21,7 @@ export default function SectionOne() {
 
   return (
         <Box className="dashboard-section1 pb-5">
-            <Box className="d-flex justify-content-between m-auto main-width">
+            <Box className="dashboard-nav-section d-flex justify-content-between m-auto main-width">
                 <Card className="exchange-card">
                     <CardContent>
                         <AppBar position="static" className="bg-transparent box-shadow-none exchange-card-appbar">
@@ -46,9 +46,9 @@ export default function SectionOne() {
                         </TabPanel>
                     </CardContent>
                 </Card>
-                <Box className="pl-5">
+                <Box className="dashboard-letters">
                     <Box>
-                        <p className="color-white font-weight-bold m-0 fs-3 mb-1">The World's Best Multi-Crypto Wallet You Can Depend On.</p>
+                        <p className="color-white font-weight-bold m-0 mb-1 main-letter">The World's Best Multi-Crypto Wallet You Can Depend On.</p>
                         <p className="color-white fs-1 m-0">• Buy Cryptocurrencies at lowest cost</p>
                         <p className="color-white fs-1 m-0">• Get Free Crypto when you create an active wallet</p>
                         <p className="color-white fs-1 m-0">• Store 60 cryptocurrencies in a military grade secured wallet</p>

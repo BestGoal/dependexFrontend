@@ -5,10 +5,10 @@
     padding-bottom: 0.5rem;
     .header-top-list{
         width: auto;
-        & > div > div > span {
+        &>div>div>span{
             background: transparent
         }
-        & > div > div > div > button {
+        &>div>div>div>button{
             min-width: 100px
         }
     }
@@ -23,18 +23,6 @@
     .header-badge{
         margin-left: 0.5rem;
         margin-right: 0.5rem;
-    }
-}
-
-.header-app-bar-home{
-    margin: auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    .header-item{
-        border-right: 1px solid rgb(53, 63, 82);
-    }
-    button{
-        padding: 0 !important;
     }
 }
 
@@ -58,7 +46,7 @@
     right: 0.5rem;
     width: 500px;
     .border-solid-1{
-        border-bottom: 1px solid rgb(240, 242, 247);
+        border-bottom: 1px solid $header-mv-bt-color;
     }
     .header-mobile-item-img{
         display: flex;
@@ -76,8 +64,21 @@
         padding: 0.8rem;
     }
 }
+
 @media(max-width: 510px) {
     .header-card{
         width: 95vw;
+    }
+}
+
+.header-app-bar-home{
+    margin: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    .header-item{
+        border-right: 1px solid rgb(53, 63, 82);
+    }
+    button{
+        padding: 0 !important;
     }
 }

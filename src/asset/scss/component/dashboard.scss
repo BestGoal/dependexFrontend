@@ -1,139 +1,170 @@
-$app-part: #d2d8dd;
-$white: white;
-
 .main-dashboard{
     .dashboard-section1{
         background: linear-gradient(to bottom right,#061121 50%,#105BAA 100%);
         padding-top: 10rem;
-        .exchange-card{
-            padding-bottom: 1rem;
-            margin-left: 1rem;
-            min-width: 520px;
-            .exchange-card-appbar{
-                color: #105BAA;
-                font-weight: bold;
-                border-bottom: 1px dotted;
-                & > div > div > span {
-                    background: #1656b9;
-                    width: 110px !important;
-                }
-                .card-item{
-                    min-width: 110px;
-                }
-            }
-            .exchange-card-rate-bar{
-                background-color: #ecf1f4;
-                color: black;
-                padding: 3px;
-                border-radius: 5px;
-                & > div > div > span {
-                    background: transparent;
-                }
-                .select-item{
-                    background:$white;
-                    border: 2px solid #1656b9;
-                }
-            }
-            .exchange-card-input-header{
-                background: #e8e8e8;
-                .exchange-card-input{
-                    width: 70%;
-                    margin: 0;
-                    background: $white;
-                    & > div::before{
-                        border: none !important;
+        .dashboard-nav-section{
+            .exchange-card{
+                padding-bottom: 1rem;
+                margin-left: 1rem;
+                min-width: 520px;
+                max-width: 520px;
+                .exchange-card-appbar{
+                    color: #105BAA;
+                    font-weight: bold;
+                    border-bottom: 1px dotted;
+                    & > div > div > span {
+                        background: #1656b9;
+                        width: 110px !important;
+                    }
+                    .card-item{
+                        min-width: 110px;
                     }
                 }
-                .dropdown-btn{
-                    border-left: 1px solid gray;
-                    padding-left: 1rem;
-                    width: 30%;
-                    .main-name{
+                .exchange-card-rate-bar{
+                    background-color: #ecf1f4;
+                    color: black;
+                    padding: 3px;
+                    border-radius: 5px;
+                    & > div > div > span {
+                        background: transparent;
+                    }
+                    .select-item{
+                        background:$white;
+                        border: 2px solid #1656b9;
+                    }
+                }
+                .exchange-card-input-header{
+                    background: #e8e8e8;
+                    .exchange-card-input{
+                        width: 70%;
                         margin: 0;
-                        color: gray;
-                        font-size: 0.75rem;
+                        background: $white;
+                        & > div::before{
+                            border: none !important;
+                        }
                     }
-                    .name{
-                        margin: 0;
-                        font-size: 1.3rem;
-                        font-weight: bold;
+                    .dropdown-btn{
+                        border-left: 1px solid gray;
+                        padding-left: 1rem;
+                        width: 30%;
+                        .main-name{
+                            margin: 0;
+                            color: gray;
+                            font-size: 0.75rem;
+                        }
+                        .name{
+                            margin: 0;
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                        }
+                        .country-name{
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            margin: 0;
+                            margin-top: 0.7rem;
+                            margin-bottom: 0.7rem;
+                        }
                     }
-                    .country-name{
-                        font-size: 1.3rem;
-                        font-weight: bold;
-                        margin: 0;
-                        margin-top: 0.7rem;
-                        margin-bottom: 0.7rem;
+                    .dropdown-btn-country{
+                        border-left: 1px solid gray;
+                        padding-left: 1rem; 
+                        padding-top: 0.2rem; 
+                        padding-bottom: 0.2rem; 
+                        width: 100%;
+                        .main-name{
+                            margin: 0;
+                            color: gray;
+                            font-size: 0.75rem;
+                        }
+                        .name{
+                            margin: 0;
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                        }
+                        .country-name{
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            margin: 0;
+                        }
                     }
                 }
-                .dropdown-btn-country{
-                    border-left: 1px solid gray;
-                    padding-left: 1rem; 
-                    padding-top: 0.2rem; 
-                    padding-bottom: 0.2rem; 
-                    width: 100%;
-                    .main-name{
-                        margin: 0;
-                        color: gray;
-                        font-size: 0.75rem;
+                .dropdown-exchange-card{
+                    position: absolute;
+                    width: 440px;
+                    z-index: 3;
+                    max-height: 400px;
+                    overflow-y: auto;
+                    .dropdown-exchange-content{
+                        padding: 0;
+                        padding-left: 0.5rem !important;
+                        padding-right: 0.5rem !important;
                     }
-                    .name{
-                        margin: 0;
-                        font-size: 1.3rem;
-                        font-weight: bold;
-                    }
-                    .country-name{
-                        font-size: 1.3rem;
-                        font-weight: bold;
-                        margin: 0;
-                    }
-                }
-            }
-            .dropdown-exchange-card{
-                position: absolute;
-                width: 440px;
-                z-index: 3;
-                max-height: 400px;
-                overflow-y: auto;
-                .dropdown-exchange-content{
-                    padding: 0;
-                    padding-left: 0.5rem !important;
-                    padding-right: 0.5rem !important;
-                }
-                .dropdown-exchange-input{
-                    width: 100%;
-                    background: transparent !important;
-                    margin: 0;
-                    & > div{
+                    .dropdown-exchange-input{
+                        width: 100%;
                         background: transparent !important;
-                        border: none !important;
+                        margin: 0;
+                        & > div{
+                            background: transparent !important;
+                            border: none !important;
+                        }
+                        & > div:after{
+                            border-bottom: transparent !important;
+                        }
                     }
-                    & > div:after{
-                        border-bottom: transparent !important;
+                    .dropdown-exchange-item{
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #105aa8;
+                        }
+                        .dropdown-exchange-c-ico{
+                            background: #0e4c8f;
+                            color: $white;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 8px;
+                        }
                     }
                 }
-                .dropdown-exchange-item{
-                    cursor: pointer;
-                    &:hover{
-                        background-color: #105aa8;
-                    }
-                    .dropdown-exchange-c-ico{
-                        background: #0e4c8f;
-                        color: $white;
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 8px;
-                    }
+                .exchange-btn{
+                    padding: 1rem;
+                    width: 100%;
+                    background: #0e4f94;
+                    color: $white;
                 }
             }
-            .exchange-btn{
-                padding: 1rem;
-                width: 100%;
-                background: #0e4f94;
-                color: $white;
+            .dashboard-letters{
+                padding-left: 5rem;
+                .main-letter{
+                    font-size: 3rem;
+                }
+            }
+        }
+        @media(max-width: 1280px) {
+            .dashboard-nav-section{
+                max-width: 100%;
+                .dashboard-letters{
+                    padding-left: 1rem !important;
+                    .main-letter{
+                        font-size: 2rem !important;
+                    }
+                }
             }
         }
     }
+    @media(max-width: 1024px) {
+        .dashboard-nav-section{
+            justify-content: center !important;
+            flex-direction: column;
+            .dashboard-section1{
+                padding-top: 6rem;
+            }
+        }
+    }
+
+
+
+
+
     .dash-section-content{
         .dashboard-category{
             max-width: 50%;
@@ -155,10 +186,5 @@ $white: white;
     }
     .dash-download-app{
         background-color: $app-part !important;
-    }
-    @media(max-width: 768px) {
-        .exchange-card{
-            flex-basis: 100%
-        }
     }
 }

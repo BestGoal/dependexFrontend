@@ -2,12 +2,17 @@ $sidebar-icon: rgb(12, 108, 242);
 $sidebar-color: rgb(13, 53, 120);
 $sidebar-item-color: #d8ebfd;
 $sidebar-item-a-color: #d8ebfd;
+
 $home-card-border-color: rgb(240, 242, 247);
 $home-balance-type-color: rgb(53, 63, 82);
 $home-balance-money-color: rgb(103, 113, 132);
 $home-balance-icon-bg-color: rgb(216, 235, 253);
+
 $theme-full-btn-color: #0c6cf2;
+
 $white: white;
+$app-part: #d2d8dd;
+$header-mv-bt-color: rgb(240, 242, 247);
 
 @import "./theme/index.scss";
 @import "./baseComponent/index.scss";
