@@ -26,8 +26,8 @@
 .justify-content-between {
     justify-content: space-between;
 }
-.justify-content-right {
-    justify-content: right;
+.justify-content-end {
+    justify-content: flex-end;
 }
 .justify-content-start{
     justify-content: flex-start !important;
@@ -268,7 +268,7 @@
 }
 
 .color-white{
-    color: white;
+    color: white !important;
 }
 .color-gray{
     color: gray;
