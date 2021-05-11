@@ -142,7 +142,7 @@ export default function Home() {
                                         </Grid>
                                         <Grid item md={8}>
                                             <Chart
-                                                options={getName(item.name, item.tradeData.length)}
+                                                options={getName(item.name, item.tradeData && item.tradeData.length ? item.tradeData.length : 0)}
                                                 series={getTradeData(item.tradeData)}
                                                 type="line"
                                                 height={100}
