@@ -1,3 +1,4 @@
 export const Root = {
-    adminUrl: "http://localhost:3000/"
+    adminUrl: "https://dependex.com/"
+    // adminUrl: "http://localhost:3000/"
 }

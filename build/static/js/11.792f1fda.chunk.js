@@ -1,0 +1,2 @@
+(this["webpackJsonpdependex-frontend"]=this["webpackJsonpdependex-frontend"]||[]).push([[11],{250:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return d}));var r=t(176),c=(t(0),t(1));function d(){return Object(c.jsx)(r.a,{children:Object(c.jsx)("h1",{children:"Setting"})})}}}]);
+//# sourceMappingURL=11.792f1fda.chunk.js.map
