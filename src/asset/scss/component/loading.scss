@@ -1,0 +1,72 @@
+// body{
+//     overflow: hidden;
+// }
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    .over-load{
+        width: 100vw;
+        height: 100vh;
+        background-color: gray;
+        opacity: 0.2;
+        position: absolute;
+        z-index: 999
+    }
+
+    .spinner {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+        z-index: 1000
+    }
+      
+    .bubble-1,
+    .bubble-2 {
+        position: absolute;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        background-color: #4b9cdb;
+    }
+      
+    .bubble-2 {
+        top: auto;
+        bottom: 0;
+    }
+      
+    .load-9 .spinner {
+        animation: loadingI 2s linear infinite;
+    }
+
+    .load-9 .bubble-1,
+    .load-9 .bubble-2 {
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    .load-9 .bubble-2 {
+        animation-delay: -1s;
+    }
+      
+      
+    @keyframes loadingI {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+      
+    @keyframes bounce {
+        0%,100% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1);
+        }
+    }      
+}

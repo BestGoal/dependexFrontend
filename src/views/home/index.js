@@ -8,22 +8,19 @@ import Typography from '@material-ui/core/Typography'
 import { AttachMoney, AccountBalanceWallet } from "@material-ui/icons"
 import Pagination from '@material-ui/lab/Pagination';
 import Chart from 'react-apexcharts'
+import { useDispatch } from 'react-redux'
 import Axios from "../../pre/request"
 import { Root } from "../../pre/config"
 
 export default function Home() {
 
+    const dispatch = useDispatch()
+
     const [assetList, setAssetList] = useState([]);
     const [pageStart, setPageStart] = useState(1);
     const [pageLimit] = useState(10);
     const [pageCount, setPageCount] = useState(10);
-
-    const btcChartData = [
-        {
-            name: 'Price:',
-            data: [47, 45, 52, 56, 24, 65, 32, 38, 54, 56, 45, 32]
-        }
-    ]
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         async function fetchData() {
@@ -32,20 +29,21 @@ export default function Home() {
                 limit: pageLimit,
                 convert: "USD"
             }
-            let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssets");
+            let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssets", dispatch, true);
             if (data.status === true) {
                 setPageCount(Number((data.count / pageLimit).toFixed()))
                 setAssetList(data.data);
             }
         }
         fetchData()
-    }, [pageStart, pageLimit])
+    }, [pageStart, pageLimit, dispatch])
 
     const handleChange = (event, value) => {
         setPageStart((pageLimit * (value - 1)) + 1)
+        setCurrentPage(value)
     }
 
-    const getName = (name) => {
+    const getName = (name, length) => {
         let btcChartOptions = {
             chart: {
                 toolbar: {
@@ -65,10 +63,20 @@ export default function Home() {
                 ]
             }
         }
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < length; i++) {
             btcChartOptions.xaxis.categories.push(name)
         }
         return btcChartOptions;
+    }
+
+    const getTradeData = (tradeData) => {
+        let btcChartData = [
+            {
+                name: 'Price:',
+                data: tradeData
+            }
+        ]
+        return btcChartData;
     }
 
     return (
@@ -102,7 +110,7 @@ export default function Home() {
                 </Grid>
             </Grid>
             <Box className="d-flex justify-content-end p-1">
-                <Pagination count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
+                <Pagination page={currentPage} count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
             </Box>
             {
                 assetList.map((item, i) => (
@@ -134,8 +142,8 @@ export default function Home() {
                                         </Grid>
                                         <Grid item md={8}>
                                             <Chart
-                                                options={getName(item.name)}
-                                                series={btcChartData}
+                                                options={getName(item.name, item.tradeData.length)}
+                                                series={getTradeData(item.tradeData)}
                                                 type="line"
                                                 height={100}
                                             />
@@ -152,7 +160,7 @@ export default function Home() {
                 ))
             }
             <Box className="d-flex justify-content-end p-1">
-                <Pagination count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
+                <Pagination page={currentPage} count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
             </Box>
         </React.Fragment>
     )

@@ -10,6 +10,7 @@ const Dashboard = lazy(() => import("./views/dashboard/index"));
 const Home = lazy(() => import("./views/home/index"));
 const Security = lazy(() => import("./views/security/index"));
 const Setting = lazy(() => import("./views/setting/index"));
+const Loading = lazy(() => import("./views/baseComponent/loading"));
 
 const RouteConfig = ({ component: Component, MainLayout, HomeLayout, AuthLayout, ...rest }) => (
   <Route
@@ -60,6 +61,7 @@ class AppRouter extends React.Component {
   render() {
     return (
       <Router history={history}>
+        { this.props.loading && <Loading /> }
         <Switch>
           {/* <RequireAuth> */}
             <AppRoute path="/" exact component={Dashboard} MainLayout />
@@ -77,6 +79,7 @@ class AppRouter extends React.Component {
 }
 
 const mapStateToPropss = (state) => ({
+  loading: state.base.loading
 })
 
 const mapDispatchToProps = {
