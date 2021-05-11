@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button'
 import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Settings, Restore, ExitToApp } from "@material-ui/icons"
 import { history } from "../../../../history"
 import { FaUpload, FaDownload, FaWallet } from "react-icons/fa";
+import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
 
 export default function Header() {
 
@@ -14,9 +15,12 @@ export default function Header() {
         <AppBar position="static" className="header-app-bar-home bg-transparent box-shadow-none">
             <Toolbar className="d-flex justify-content-between">
                 <Box className="d-flex align-items-center">
-                    <Typography className="font-weight-bold crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
-                        Dependex
-                    </Typography>
+                    <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
+                        <AccountBalanceWallet style={{ transform: "rotate(180deg)", background: "rgb(14 71 133)", color: "white", width: "30", height: "30" }} />
+                        <Typography className="font-weight-bold" variant="h4" >
+                            Dependex
+                        </Typography>
+                    </Box>
                     <Box className="d-flex justify-content-start align-items-center ml-5">
                         <p className="m-0 header-item pl-1 pr-1">
                             <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none text-capitalize" variant="contained">

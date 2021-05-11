@@ -62,7 +62,8 @@
 
 // background
 .bg-theme{
-    background: #061121 !important;
+    background: rgb(14 71 133) !important;
+    // background: #061121 !important;
 }
 .bg-transparent{
     background: transparent !important;
@@ -268,7 +269,7 @@
 }
 
 .color-white{
-    color: white !important;
+    color: $white !important;
 }
 .color-gray{
     color: gray;

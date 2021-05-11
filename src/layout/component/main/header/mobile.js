@@ -14,6 +14,7 @@ import WalletIcon from "../../../../asset/image/section/wallet-icon.png"
 import ExchangeIcon from "../../../../asset/image/section/exchange-icon.png"
 import ExplorerIcon from "../../../../asset/image/section/explorer-icon.png"
 import { history } from "../../../../history"
+import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
 
 export default function Header() {
 
@@ -26,21 +27,24 @@ export default function Header() {
     return (
         <AppBar position="static" className="header-app-bar bg-transparent box-shadow-none">
             <Toolbar className="d-flex justify-content-between">
-                <Box className="d-flex align-items-center">
-                    <Typography className="font-weight-bold" variant="h5" onClick={()=>gotoPage("/")}> Dependex.com </Typography>
+                <Box className="d-flex align-items-center crusor-pointer" onClick={() => history.push("/")}>
+                    <AccountBalanceWallet style={{ transform: "rotate(180deg)", background: "rgb(14 71 133)", color: "white", width: "30", height: "30" }} />
+                    <Typography className="font-weight-bold" variant="h4">
+                        Dependex
+                    </Typography>
                 </Box>
                 <Box>
-                    <IconButton edge="start" color="inherit" aria-label="menu" onClick ={() => setMode(!mode)}>
+                    <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setMode(!mode)}>
                         <MenuIcon />
                     </IconButton>
                 </Box>
                 {
-                    mode && 
+                    mode &&
                     <Card className="header-card">
                         <CardContent>
                             <Box className="d-flex justify-content-between border-solid-1">
                                 <h3> Products </h3>
-                                <Clear onClick ={() => setMode(!mode)} />
+                                <Clear onClick={() => setMode(!mode)} />
                             </Box>
                             <Box className="d-flex justify-content-start border-solid-1">
                                 <Box className="header-mobile-item-img">
@@ -80,8 +84,8 @@ export default function Header() {
                             </Box>
                         </CardContent>
                         <CardActions className="d-flex justify-content-center">
-                            <Button className="mobile-auth-btn theme-full-btn" variant="contained" color="primary" onClick={()=>gotoPage("/create-wallet")}> Create Wallet </Button>
-                            <Button className="mobile-auth-btn theme-empty-btn" variant="contained" onClick={()=>gotoPage("/login")}> Login </Button>
+                            <Button className="mobile-auth-btn theme-full-btn" variant="contained" color="primary" onClick={() => gotoPage("/create-wallet")}> Create Wallet </Button>
+                            <Button className="mobile-auth-btn theme-empty-btn" variant="contained" onClick={() => gotoPage("/login")}> Login </Button>
                         </CardActions>
                     </Card>
                 }

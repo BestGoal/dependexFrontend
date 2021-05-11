@@ -6,14 +6,16 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Badge from '@material-ui/core/Badge'
 import { history } from "../../../../history"
+import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
 
 export default function Header() {
 
     return (
         <AppBar position="static" className="header-app-bar bg-transparent box-shadow-none">
             <Toolbar className="d-flex justify-content-between">
-                <Box className="d-flex align-items-center">
-                    <Typography className="font-weight-bold crusor-pointer" variant="h4" onClick={()=>history.push("/")}>
+                <Box className="d-flex align-items-center crusor-pointer" onClick={()=>history.push("/")}>
+                    <AccountBalanceWallet style={{ transform: "rotate(180deg)", background: "rgb(14 71 133)", color: "white", width: "30", height: "30" }} />
+                    <Typography className="font-weight-bold" variant="h4">
                         Dependex
                     </Typography>
                 </Box>
