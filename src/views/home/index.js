@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
+import { useDispatch } from 'react-redux'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import { AttachMoney, AccountBalanceWallet } from "@material-ui/icons"
-import Pagination from '@material-ui/lab/Pagination';
+import Pagination from '@material-ui/lab/Pagination'
 import Chart from 'react-apexcharts'
-import { useDispatch } from 'react-redux'
+import AttachMoney from "@material-ui/icons/AttachMoney"
+import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
 import Axios from "../../pre/request"
 import { Root } from "../../pre/config"
 
@@ -43,7 +44,7 @@ export default function Home() {
         setCurrentPage(value)
     }
 
-    const getName = (name, length) => {
+    const getName = (tradeData) => {
         let btcChartOptions = {
             chart: {
                 toolbar: {
@@ -53,18 +54,33 @@ export default function Home() {
                     enabled: true
                 }
             },
-            colors: ['#f4772e'],
+            dataLabels: {
+                enabled: false
+            },
             stroke: {
-                width: 2,
-                curve: 'smooth'
+                color: '#3c44b1',
+                curve: 'smooth',
+                width: 2
+            },
+            fill: {
+                color: '#3c44b1',
+                gradient: {
+                    shade: 'light',
+                    type: 'vertical',
+                    shadeIntensity: 1,
+                    inverseColors: false,
+                    opacityFrom: 0.6,
+                    opacityTo: 0,
+                    stops: [0, 10000]
+                }
             },
             xaxis: {
                 categories: [
                 ]
             }
         }
-        for (let i = 0; i < length; i++) {
-            btcChartOptions.xaxis.categories.push(name)
+        for (let i = 0; i < tradeData.length; i ++) {
+            btcChartOptions.xaxis.categories.push(tradeData[i].time)
         }
         return btcChartOptions;
     }
@@ -72,10 +88,13 @@ export default function Home() {
     const getTradeData = (tradeData) => {
         let btcChartData = [
             {
-                name: 'Price:',
-                data: tradeData
+                name: 'Price',
+                data: []
             }
         ]
+        for(let i = 0 ; i < tradeData.length ; i ++) {
+            btcChartData[0].data.push(tradeData[i].price)
+        }
         return btcChartData;
     }
 
@@ -110,23 +129,27 @@ export default function Home() {
                 </Grid>
             </Grid>
             <Box className="d-flex justify-content-end p-1">
-                <Pagination page={currentPage} count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
+                <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
             </Box>
             {
                 assetList.map((item, i) => (
                     <Grid key={i} container spacing={3}>
                         <Grid item md={3}>
-                            <Card className="bg-transparent box-shadow-none home-border-item">
-                                <CardContent className="home-card-content">
-                                    <Box className="d-flex align-items-center">
-                                        <Box className="home-currency-icon-p d-flex justify-content-center align-items-center">
-                                            <img src={item.img} alt="" className="home-balance-icon" />
+                            <Card className="bg-transparent box-shadow-none home-border-item" style={{width: "100%"}}>
+                                <CardContent className="home-card-content" style={{width: "100%"}}>
+                                    <Box className="d-flex" style={{width: "100%"}}>
+                                        <Box className="home-currency-icon-p d-flex justify-content-center">
+                                            <img src={item.img} style={{width: "100%"}} alt="" className="home-balance-icon" />
                                         </Box>
-                                        <Typography variant="h5" className="home-balance-type font-weight-bold">{item.name}</Typography>
-                                    </Box>
-                                    <Box className="ml-2">
-                                        <Typography variant="h5" className="font-weight-bold home-balance-type">${item.usdt}</Typography>
-                                        <Typography variant="h6" className="home-balance-money">{item.crypto}{item.currency}</Typography>
+                                        <Box className="d-flex flex-direction-column pl-1" style={{width: "100%"}}>
+                                            <Box>
+                                                <Typography variant="h5" className="home-balance-type font-weight-bold">{item.name}</Typography>
+                                            </Box>
+                                            <Box className="d-flex pt-2 justify-content-between">
+                                                <Typography variant="h5" className="font-weight-bold home-balance-type">$ {item.usdt}</Typography>
+                                                <Typography variant="h6" className="home-balance-money">{item.crypto} {item.currency}</Typography>
+                                            </Box> 
+                                        </Box>
                                     </Box>
                                 </CardContent>
                             </Card>
@@ -142,10 +165,10 @@ export default function Home() {
                                         </Grid>
                                         <Grid item md={8}>
                                             <Chart
-                                                options={getName(item.name, item.tradeData && item.tradeData.length ? item.tradeData.length : 0)}
+                                                options={getName(item.tradeData)}
                                                 series={getTradeData(item.tradeData)}
-                                                type="line"
-                                                height={100}
+                                                type="area"
+                                                height={80}
                                             />
                                         </Grid>
                                         <Grid item md={2} className="d-flex justify-content-center align-items-center">
@@ -160,7 +183,7 @@ export default function Home() {
                 ))
             }
             <Box className="d-flex justify-content-end p-1">
-                <Pagination page={currentPage} count={pageCount} color="primary" boundaryCount={2} onChange={handleChange} />
+                <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
             </Box>
         </React.Fragment>
     )

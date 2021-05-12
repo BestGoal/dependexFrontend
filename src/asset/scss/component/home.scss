@@ -55,4 +55,59 @@
             }
         }
     }
+    .security-container{
+        .sub-header{
+            color: $sidebar-color;
+        }
+        .security-progress{
+            border: 5px solid $sidebar-color;
+            border-radius: 50px;
+            width: 60px;
+            min-width: 60px;
+            height: 60px;
+            font-size: 2rem;
+        }
+        .security-title{
+            padding-left: 0.5rem;
+        }
+        .security-item{
+            border: 1px solid $security-item;
+            .security-icon{
+                border: 2px solid $security-item;
+                border-radius: 50px;
+                width: 60px;
+                min-width: 60px;
+                height: 60px;
+                font-size: 2rem;
+                svg{
+                    color: $security-item;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            .security-letter1{
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+            .exchange-card-rate-bar{
+                background-color: #ecf1f4;
+                padding: 3px;
+                border-radius: 5px;
+                & > div > div > span {
+                    background: transparent;
+                }
+                &>button{
+                    color:gray;
+                }
+                .select-item{
+                    background:$white;
+                    color: blue !important;
+                    box-shadow: 3px 3px 3px gray;
+                }
+            }
+            .security-change-btn{
+                width: 150px;
+            }
+        }
+    }
 }

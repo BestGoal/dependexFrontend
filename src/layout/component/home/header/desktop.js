@@ -4,10 +4,11 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Settings, Restore, ExitToApp } from "@material-ui/icons"
+import { ShoppingCart, AttachMoney, SwapHorizontalCircle, SwapCalls, Restore, PowerSettingsNewTwoTone } from "@material-ui/icons"
 import { history } from "../../../../history"
 import { FaUpload, FaDownload, FaWallet } from "react-icons/fa";
 import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
+import IconButton from '@material-ui/core/IconButton'
 
 export default function Header() {
 
@@ -67,20 +68,15 @@ export default function Header() {
                     </Box>
                 </Box>
                 <Box className="d-flex justify-content-right align-items-center">
-                    <p className="header-item m-0">
-                        <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
+                    <p>
+                        <IconButton>
                             <Restore className="color-white" />
-                        </Button>
+                        </IconButton>
                     </p>
-                    <p className="header-item m-0">
-                        <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
-                            <Settings className="color-white" />
-                        </Button>
-                    </p>
-                    <p className="m-0">
-                        <Button className="d-flex align-items-center ml-1 bg-transparent box-shadow-none" variant="contained">
-                            <ExitToApp className="color-white" />
-                        </Button>
+                    <p className="ml-2 mr-2">
+                        <IconButton>
+                            <PowerSettingsNewTwoTone className="color-white" />
+                        </IconButton>
                     </p>
                 </Box>
             </Toolbar>

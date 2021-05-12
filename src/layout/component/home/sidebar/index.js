@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import HomeIcon from '@material-ui/icons/Home'
 import SecurityIcon from '@material-ui/icons/Security'
 import SettingsIcon from '@material-ui/icons/Settings'
+import ChromeReaderModeTwoTone from '@material-ui/icons/ChromeReaderModeTwoTone'
 import { history } from "../../../../history"
 
 export default function Sidebar() {
@@ -67,7 +68,7 @@ export default function Sidebar() {
                     onClick={() => handleListItemClick("/activity")}
                 >
                     <ListItemIcon>
-                        <SettingsIcon className="home-sidebar-icon" />
+                        <ChromeReaderModeTwoTone className="home-sidebar-icon" />
                     </ListItemIcon>
                     <ListItemText primary="Activities" />
                 </ListItem>
