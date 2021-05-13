@@ -58,17 +58,7 @@
     .security-container{
         .sub-header{
             color: $sidebar-color;
-        }
-        .security-progress{
-            border: 5px solid $sidebar-color;
-            border-radius: 50px;
-            width: 60px;
-            min-width: 60px;
-            height: 60px;
-            font-size: 2rem;
-        }
-        .security-title{
-            padding-left: 0.5rem;
+            margin: 0;
         }
         .security-item{
             border: 1px solid $security-item;
@@ -107,6 +97,9 @@
             }
             .security-change-btn{
                 width: 150px;
+            }
+            button{
+                text-transform: capitalize !important;
             }
         }
     }

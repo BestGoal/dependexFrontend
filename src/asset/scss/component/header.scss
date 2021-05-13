@@ -24,6 +24,12 @@
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
+    button:focus, button:hover, button:active{
+        box-shadow: none;
+        .MuiTouchRipple-root{
+            display: none;
+        }
+    }
 }
 
 @media(max-width: 1130px) {
@@ -75,10 +81,13 @@
     margin: auto;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    .header-item{
-        border-right: 1px solid rgb(53, 63, 82);
-    }
     button{
         padding: 0 !important;
+    }
+    button:focus, button:hover, button:active{
+        box-shadow: none;
+        .MuiTouchRipple-root{
+            display: none;
+        }
     }
 }

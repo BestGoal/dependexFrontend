@@ -18,32 +18,11 @@ export default function Security() {
 
     return (
         <Box className="security-container">
-            <Box className="text-align-center">
+            <Box>
                 <h1 className="sub-header">Security</h1>
+                <Typography>Use the measures below to prevent unauthorized access to your Dependex wallet.</Typography>
             </Box>
             <Divider />
-            <Grid container className="p-2" spacing="1">
-                <Grid item md={5}>
-                    <Typography>Complete the steps below to help prevent unauthorized access to your wallet. Add additional verification to access your funds at any time.</Typography>
-                </Grid>
-                <Grid item md={7}>
-                    <Grid container>
-                        <Grid item md={4} className="d-flex align-items-center">
-                            <Box className="security-progress d-flex justify-content-center align-items-center">1</Box>
-                            <Typography className="security-title">Verify Your Personal Email</Typography>
-                        </Grid>
-                        <Grid item md={4} className="d-flex align-items-center">
-                            <Box className="security-progress d-flex justify-content-center align-items-center">2</Box>
-                            <Typography className="security-title">Turn on Two-Step Verification</Typography>
-                        </Grid>
-                        <Grid item md={4} className="d-flex align-items-center">
-                            <Box className="security-progress d-flex justify-content-center align-items-center">3</Box>
-                            <Typography className="security-title">Save Secret Private Key Recovery Phrase</Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-
             <Grid container className="p-2 security-item">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
@@ -121,12 +100,12 @@ export default function Security() {
                 </Grid>
                 <Grid item md={8}>
                     <Typography className="security-letter1">Tor Requests</Typography>
-                    <Typography>Your browser will be remembered for a short period of time, allowing you to login again without having to re-authenticate.Disable this to require full authentication every time you login. This will not affect your current browser until you delete all cookies.</Typography>
+                    <Typography>The Tor anonymizing network is frequently used by hackers attempting to access wallets. Please use this option to prevent IP addresses known to be part of the Tor network from accessing your Dependex wallet.</Typography>
                 </Grid>
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="exchange-card-rate-bar">
-                        <Button className={!mode1 ? "select-item" : ""} onClick={() => setMode1(!mode1)}>Enable</Button>
-                        <Button className={mode1 ? "select-item" : ''} onClick={() => setMode1(!mode1)}>Disable</Button>
+                        <Button className={!mode1 ? "select-item" : ""} onClick={() => setMode1(!mode1)}>Allow</Button>
+                        <Button className={mode1 ? "select-item" : ''} onClick={() => setMode1(!mode1)}>Block</Button>
                     </Box>
                 </Grid>
             </Grid>
@@ -143,7 +122,7 @@ export default function Security() {
                 </Grid>
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Button className="theme-full-btn security-change-btn">
-                        Backup Funds
+                        Edit
                     </Button>
                 </Grid>
             </Grid>
