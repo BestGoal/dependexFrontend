@@ -1,5 +1,4 @@
 import React from "react"
-import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Box from "@material-ui/core/Box"
 import Typography from '@material-ui/core/Typography'
@@ -18,12 +17,11 @@ export default function Security() {
 
     return (
         <Box className="security-container">
-            <Box>
+            <Box className="pb-1">
                 <h1 className="sub-header">Security</h1>
                 <Typography>Use the measures below to prevent unauthorized access to your Dependex wallet.</Typography>
             </Box>
-            <Divider />
-            <Grid container className="p-2 security-item">
+            <Grid container className="p-1 security-item">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <Email />
@@ -40,7 +38,7 @@ export default function Security() {
                 </Grid>
             </Grid>
 
-            <Grid container className="p-2 security-item mt-1">
+            <Grid container className="p-1 security-item mt-1">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <Lock />
@@ -52,13 +50,13 @@ export default function Security() {
                 </Grid>
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="exchange-card-rate-bar">
-                        <Button className={!mode ? "select-item" : ""} onClick={() => setMode(!mode)}>Enable</Button>
-                        <Button className={mode ? "select-item" : ''} onClick={() => setMode(!mode)}>Disable</Button>
+                        <Button className={mode ? "enable-item" : ""} onClick={() => setMode(!mode)}>Enable</Button>
+                        <Button className={!mode ? "disable-item" : ''} onClick={() => setMode(!mode)}>Disable</Button>
                     </Box>
                 </Grid>
             </Grid>
 
-            <Grid container className="p-2 security-item mt-1">
+            <Grid container className="p-1 security-item mt-1">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <VpnKey />
@@ -75,7 +73,7 @@ export default function Security() {
                 </Grid>
             </Grid>
 
-            <Grid container className="p-2 security-item mt-1">
+            <Grid container className="p-1 security-item mt-1">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <Create />
@@ -92,7 +90,7 @@ export default function Security() {
                 </Grid>
             </Grid>
 
-            <Grid container className="p-2 security-item mt-1">
+            <Grid container className="p-1 security-item mt-1">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <Send />
@@ -104,13 +102,13 @@ export default function Security() {
                 </Grid>
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="exchange-card-rate-bar">
-                        <Button className={!mode1 ? "select-item" : ""} onClick={() => setMode1(!mode1)}>Allow</Button>
-                        <Button className={mode1 ? "select-item" : ''} onClick={() => setMode1(!mode1)}>Block</Button>
+                        <Button className={mode1 ? "enable-item" : ""} onClick={() => setMode1(!mode1)}>Allow</Button>
+                        <Button className={!mode1 ? "disable-item" : ''} onClick={() => setMode1(!mode1)}>Block</Button>
                     </Box>
                 </Grid>
             </Grid>
 
-            <Grid container className="p-2 security-item mt-1">
+            <Grid container className="p-1 security-item mt-1">
                 <Grid item md={2} className="d-flex align-items-center justify-content-center">
                     <Box className="security-icon d-flex justify-content-center align-items-center">
                         <NetworkCheck />

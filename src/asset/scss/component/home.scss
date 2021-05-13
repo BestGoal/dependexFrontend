@@ -1,5 +1,6 @@
 .home-sidebar{
     width: 350px;
+    border-right: 2px solid $home-card-border-color;
     .home-sidebar-list{
         padding: 0 !important;
         color: $sidebar-color;
@@ -23,9 +24,9 @@
     width: 100%;
     .home-border-item{
         border: 2px solid $home-card-border-color;
+        height: 100px;
         .home-card-content{
             padding-bottom: 0.5rem;
-            height: 130px;
         }
         .home-balance-type{
             color: $home-balance-type-color;
@@ -89,9 +90,13 @@
                 &>button{
                     color:gray;
                 }
-                .select-item{
+                .enable-item{
+                    background: $theme-full-btn-color;
+                    color: $white !important;
+                    box-shadow: 3px 3px 3px gray;
+                }
+                .disable-item{
                     background:$white;
-                    color: blue !important;
                     box-shadow: 3px 3px 3px gray;
                 }
             }

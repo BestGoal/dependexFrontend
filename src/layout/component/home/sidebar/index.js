@@ -4,7 +4,6 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
 import HomeIcon from '@material-ui/icons/Home'
 import SecurityIcon from '@material-ui/icons/Security'
 import SettingsIcon from '@material-ui/icons/Settings'
@@ -39,7 +38,6 @@ export default function Sidebar() {
                     </ListItemIcon>
                     <ListItemText primary="Home" />
                 </ListItem>
-                <Divider />
                 <ListItem 
                     button
                     selected={history.location.pathname === "/security"}
@@ -50,7 +48,6 @@ export default function Sidebar() {
                     </ListItemIcon>
                     <ListItemText primary="Security" />
                 </ListItem>
-                <Divider />
                 <ListItem 
                     button
                     selected={history.location.pathname === "/setting"}
@@ -61,7 +58,6 @@ export default function Sidebar() {
                     </ListItemIcon>
                     <ListItemText primary="Setting" />
                 </ListItem>
-                <Divider />
                 <ListItem 
                     button
                     selected={history.location.pathname === "/activity"}

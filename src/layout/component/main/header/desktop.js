@@ -24,8 +24,8 @@ export default function Header() {
                         <Button className="header-btn-item" variant="contained">Exchange</Button>
                         <Button className="header-btn-item" variant="contained">
                             Get Free Crypto
+                            <Badge className="header-badge" badgeContent={"New"} color="secondary" />
                         </Button>
-                        <Badge className="header-badge" badgeContent={"New"} color="secondary" />
                         <Button className="header-btn-item" variant="contained">Earn +20% APR</Button>
                         <Button className="header-btn-item" variant="contained">Affiliate (lang api)</Button>
                     </Box>
