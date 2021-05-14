@@ -152,15 +152,7 @@
             }
         }
     }
-    @media(max-width: 1024px) {
-        .dashboard-nav-section{
-            justify-content: center !important;
-            flex-direction: column;
-            .dashboard-section1{
-                padding-top: 6rem;
-            }
-        }
-    }
+
 
 
 
@@ -187,5 +179,15 @@
     }
     .dash-download-app{
         background-color: $app-part !important;
+    }
+}
+
+@media(max-width: 1024px) {
+    .dashboard-section1{
+        padding-top: 6rem !important;
+        // .dashboard-nav-section{
+        //     justify-content: center !important;
+        //     flex-direction: column;
+        // }
     }
 }
