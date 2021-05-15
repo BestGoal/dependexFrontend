@@ -108,4 +108,35 @@
             }
         }
     }
+    .activity-container{
+        .exchange-card-rate-bar{
+            background-color: #ecf1f4;
+            color: black;
+            padding: 3px;
+            border-radius: 5px;
+            & > div > div > span {
+                background: transparent;
+            }
+            .select-item{
+                background:$white;
+                color: #1656b9;
+            }
+            .item{
+                background: transparent;
+                box-shadow: none;
+                color: gray;
+            }
+        }
+        .activity-card{
+            border: 1px solid rgb(204, 210, 222);
+            border-radius: 10px;
+            .activity-icon{
+                background-color: #ebcdad;
+                color: #db8727;
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+            }
+        }
+    }
 }

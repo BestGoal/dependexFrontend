@@ -23,31 +23,31 @@ export default function Header() {
                         </Typography>
                     </Box>
                     <Box className="d-flex justify-content-start align-items-center ml-5">
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <ShoppingCart className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Buy</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <AttachMoney className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Sell</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <SwapHorizontalCircle className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Exchange</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <SwapCalls className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Swap</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <FaUpload className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Send</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <FaDownload className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Receive</p>
                         </Button>
-                        <Button className="d-flex align-items-center bg-transparent box-shadow-none text-capitalize" variant="contained">
+                        <Button className="d-flex align-items-center bg-transparent text-capitalize header-btn-item" variant="contained">
                             <FaWallet className="color-white" />
                             <p className="color-white fs-1 m-0 font-weight-bold">Save & Earn</p>
                         </Button>

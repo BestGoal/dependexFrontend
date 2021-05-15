@@ -6,8 +6,6 @@
         .dashboard-nav-section{
             .exchange-card{
                 padding-bottom: 1rem;
-                margin-left: 1rem;
-                min-width: 520px;
                 max-width: 520px;
                 .exchange-card-appbar{
                     color: #105BAA;
@@ -15,7 +13,7 @@
                     border-bottom: 1px dotted;
                     & > div > div > span {
                         background: #1656b9;
-                        width: 110px !important;
+                        width: 110px;
                     }
                     .card-item{
                         min-width: 110px;
@@ -134,7 +132,6 @@
                 }
             }
             .dashboard-letters{
-                padding-left: 5rem;
                 .main-letter{
                     font-size: 3rem;
                 }
@@ -142,7 +139,6 @@
         }
         @media(max-width: 1280px) {
             .dashboard-nav-section{
-                max-width: 100%;
                 .dashboard-letters{
                     padding-left: 1rem !important;
                     .main-letter{
@@ -152,11 +148,6 @@
             }
         }
     }
-
-
-
-
-
 
     .dash-section-content{
         .dashboard-category{
@@ -185,9 +176,28 @@
 @media(max-width: 1024px) {
     .dashboard-section1{
         padding-top: 6rem !important;
-        // .dashboard-nav-section{
-        //     justify-content: center !important;
-        //     flex-direction: column;
-        // }
+        .dashboard-nav-section{
+            justify-content: center !important;
+            .dashboard-letters{
+                max-width: 520px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media(max-width: 520px) {
+    .exchange-card{
+        width: 100vw;
+        .exchange-card-appbar{
+            & > div > div > span {
+                width: calc((100% - 24px) / 4) !important;
+            }
+            .card-item{
+                min-width: calc((100% - 24px) / 4) !important;
+            }
+        }
     }
 }

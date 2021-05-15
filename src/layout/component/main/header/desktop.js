@@ -31,7 +31,7 @@ export default function Header() {
                     </Box>
                     <Box>
                         <Button className="header-auth-btn" variant="contained" onClick={()=>history.push("/create-wallet")}> Create wallet </Button>
-                        <Button className="header-btn-item bg-transparent box-shadow-none" variant="contained" onClick={()=>history.push("/login")}> Login </Button>
+                        <Button className="header-btn-item" variant="contained" onClick={()=>history.push("/login")}> Login </Button>
                     </Box>
                 </Box>
             </Toolbar>

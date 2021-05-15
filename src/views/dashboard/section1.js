@@ -21,8 +21,8 @@ export default function SectionOne() {
     }
 
     return (
-        <Box className="dashboard-section1 pb-5">
-            <Grid container className="dashboard-nav-section d-flex justify-content-between m-auto main-width">
+        <Box className="dashboard-section1 pb-5 d-flex justify-content-center">
+            <Grid container className="dashboard-nav-section main-width pl-1 pr-1">
                 <Grid item md={6}>
                     <Card className="exchange-card">
                         <CardContent>
@@ -49,7 +49,7 @@ export default function SectionOne() {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid>
+                <Grid item md={6}>
                     <Box className="dashboard-letters">
                         <Box>
                             <p className="color-white font-weight-bold m-0 mb-1 main-letter">The World's Best Multi-Crypto Wallet You Can Depend On.</p>

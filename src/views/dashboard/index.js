@@ -7,7 +7,7 @@ export default function Dashboard() {
   return (
     <Box className="main-dashboard">
       <SectionOne />
-      {/* <SectionTwo /> */}
+      <SectionTwo />
     </Box>
   )
 }

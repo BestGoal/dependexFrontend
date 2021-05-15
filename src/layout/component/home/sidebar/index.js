@@ -3,10 +3,12 @@ import Box from "@material-ui/core/Box"
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
+import Button from '@material-ui/core/Button'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/Home'
 import SecurityIcon from '@material-ui/icons/Security'
 import SettingsIcon from '@material-ui/icons/Settings'
+import ExpandMore from '@material-ui/icons/ExpandMore'
 import ChromeReaderModeTwoTone from '@material-ui/icons/ChromeReaderModeTwoTone'
 import { history } from "../../../../history"
 
@@ -24,7 +26,7 @@ export default function Sidebar() {
                     <h1 className="m-0">$ 0.00</h1>
                 </Box>
                 <Box>
-                    {/* <Button variant="contained"><ExpandMore /></Button> */}
+                    <Button variant="contained"><ExpandMore /></Button>
                 </Box>
             </Box>
             <List className="home-sidebar-list" component="nav" aria-label="main mailbox folders">

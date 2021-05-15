@@ -193,8 +193,8 @@ export default function Home() {
                         <Grid item md={3}>
                             <Card className="bg-transparent box-shadow-none home-border-item">
                                 <CardContent className="home-card-content">
-                                    <Box className="d-flex">
-                                        <Box className="home-currency-icon-p d-flex justify-content-center">
+                                    <Box className="d-flex align-items-center">
+                                        <Box className="home-currency-icon-p d-flex justify-content-center align-items-center">
                                             <img src={item.img} alt="" className="home-balance-icon" />
                                         </Box>
                                         <Box className="d-flex flex-direction-column pl-1">
