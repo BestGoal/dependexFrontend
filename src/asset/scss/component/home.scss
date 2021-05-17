@@ -19,7 +19,29 @@
             }
         }
     }
+    .sidebar-cl-icon{
+        border: 1px solid rgb(223, 227, 235);
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover, &:active{
+            border: 1px solid rgb(12, 108, 242);
+            color: rgb(12, 108, 242);
+        }
+    }
 }
+.show-in-usd{
+    border: 1px solid rgb(223, 227, 235);
+    cursor: pointer !important;
+    text-align: center;
+    border-radius: 4px;
+    &:hover{
+        border: 1px solid rgb(12, 108, 242);
+        color: rgb(12, 108, 242);        
+    }
+}
+
 .home-container{
     width: 100%;
     .home-border-item{

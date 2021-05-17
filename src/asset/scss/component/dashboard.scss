@@ -1,25 +1,25 @@
-.main-dashboard{
-    .dashboard-section1{
+.main-dashboard {
+    .dashboard-section1 {
         background: rgb(14 71 133);
         // background: linear-gradient(to bottom right,#061121 50%,#105BAA 100%);
         padding-top: 10rem;
-        .dashboard-nav-section{
-            .exchange-card{
+        .dashboard-nav-section {
+            .exchange-card {
                 padding-bottom: 1rem;
                 max-width: 520px;
-                .exchange-card-appbar{
-                    color: #105BAA;
+                .exchange-card-appbar {
+                    color: #105baa;
                     font-weight: bold;
                     border-bottom: 1px dotted;
                     & > div > div > span {
                         background: #1656b9;
                         width: 110px;
                     }
-                    .card-item{
+                    .card-item {
                         min-width: 110px;
                     }
                 }
-                .exchange-card-rate-bar{
+                .exchange-card-rate-bar {
                     background-color: #ecf1f4;
                     color: black;
                     padding: 3px;
@@ -27,121 +27,68 @@
                     & > div > div > span {
                         background: transparent;
                     }
-                    .select-item{
-                        background:$white;
+                    .select-item {
+                        background: $white;
                         border: 2px solid #1656b9;
                     }
                 }
-                .exchange-card-input-header{
+                .exchange-card-input-header {
                     background: #e8e8e8;
-                    .exchange-card-input{
+                    .exchange-card-input {
                         width: 70%;
                         margin: 0;
                         background: $white;
-                        & > div::before{
+                        border-right: 1px solid gray;
+                        & > div::before {
                             border: none !important;
                         }
                     }
-                    .dropdown-btn{
-                        border-left: 1px solid gray;
+                    .dropdown-btn {
                         padding-left: 1rem;
                         width: 30%;
-                        .main-name{
+                        .main-name {
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            width: 90px;
+                            overflow: hidden;
                             margin: 0;
                             color: gray;
                             font-size: 0.75rem;
                         }
-                        .name{
+                        .name {
                             margin: 0;
                             font-size: 1.3rem;
                             font-weight: bold;
-                        }
-                        .country-name{
-                            font-size: 1.3rem;
-                            font-weight: bold;
-                            margin: 0;
-                            margin-top: 0.7rem;
-                            margin-bottom: 0.7rem;
-                        }
-                    }
-                    .dropdown-btn-country{
-                        border-left: 1px solid gray;
-                        padding-left: 1rem; 
-                        padding-top: 0.2rem; 
-                        padding-bottom: 0.2rem; 
-                        width: 100%;
-                        .main-name{
-                            margin: 0;
-                            color: gray;
-                            font-size: 0.75rem;
-                        }
-                        .name{
-                            margin: 0;
-                            font-size: 1.3rem;
-                            font-weight: bold;
-                        }
-                        .country-name{
-                            font-size: 1.3rem;
-                            font-weight: bold;
-                            margin: 0;
                         }
                     }
                 }
-                .dropdown-exchange-card{
-                    position: absolute;
-                    width: 440px;
-                    z-index: 3;
-                    max-height: 400px;
-                    overflow-y: auto;
-                    .dropdown-exchange-content{
-                        padding: 0;
-                        padding-left: 0.5rem !important;
-                        padding-right: 0.5rem !important;
-                    }
-                    .dropdown-exchange-input{
-                        width: 100%;
-                        background: transparent !important;
-                        margin: 0;
-                        & > div{
-                            background: transparent !important;
-                            border: none !important;
-                        }
-                        & > div:after{
-                            border-bottom: transparent !important;
-                        }
-                    }
-                    .dropdown-exchange-item{
-                        cursor: pointer;
-                        &:hover{
-                            background-color: #105aa8;
-                        }
-                        .dropdown-exchange-c-ico{
-                            background: #0e4c8f;
-                            color: $white;
-                            width: 24px;
-                            height: 24px;
-                            border-radius: 8px;
-                        }
-                    }
-                }
-                .exchange-btn{
+                .exchange-btn {
                     padding: 1rem;
                     width: 100%;
                     background: #0e4f94;
                     color: $white;
                 }
+                .exchange-trade-btn {
+                    background: #e3ebef;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50px;
+                    cursor: pointer;
+                }
             }
-            .dashboard-letters{
-                .main-letter{
+            .dashboard-letters {
+                .main-letter {
                     font-size: 3rem;
                 }
             }
         }
-        @media(max-width: 1280px) {
-            .dashboard-nav-section{
-                .dashboard-letters{
+        @media (max-width: 1280px) {
+            .dashboard-nav-section {
+                .dashboard-letters {
                     padding-left: 1rem !important;
-                    .main-letter{
+                    .main-letter {
                         font-size: 2rem !important;
                     }
                 }
@@ -149,18 +96,18 @@
         }
     }
 
-    .dash-section-content{
-        .dashboard-category{
+    .dash-section-content {
+        .dashboard-category {
             max-width: 50%;
             flex: 0 0 50%;
-            img{
+            img {
                 max-width: 100%;
             }
         }
-        .dashboard-instruction{
+        .dashboard-instruction {
             font-size: 1.5rem;
         }
-        .dashboard-download-btn{
+        .dashboard-download-btn {
             font-weight: 600;
             display: inline-block;
             background-color: #3375bb;
@@ -168,17 +115,43 @@
             padding: 1rem;
         }
     }
-    .dash-download-app{
+    .dash-download-app {
         background-color: $app-part !important;
     }
 }
+.dropdown-exchange-card {
+    min-width: 440px;
+    .dropdown-exchange-content {
+        padding: 0;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .dropdown-exchange-input {
+        width: 100%;
+        background: transparent !important;
+        margin: 0;
+        & > div {
+            background: transparent !important;
+            border: none !important;
+        }
+        & > div:after {
+            border-bottom: transparent !important;
+        }
+    }
+    .dropdown-exchange-item {
+        cursor: pointer;
+        &:hover {
+            background-color: #105aa8;
+        }
+    }
+}
 
-@media(max-width: 1024px) {
-    .dashboard-section1{
+@media (max-width: 1024px) {
+    .dashboard-section1 {
         padding-top: 6rem !important;
-        .dashboard-nav-section{
+        .dashboard-nav-section {
             justify-content: center !important;
-            .dashboard-letters{
+            .dashboard-letters {
                 max-width: 520px;
                 display: flex;
                 justify-content: center;
@@ -188,14 +161,14 @@
     }
 }
 
-@media(max-width: 520px) {
-    .exchange-card{
+@media (max-width: 520px) {
+    .exchange-card {
         width: 100vw;
-        .exchange-card-appbar{
+        .exchange-card-appbar {
             & > div > div > span {
                 width: calc((100% - 24px) / 4) !important;
             }
-            .card-item{
+            .card-item {
                 min-width: calc((100% - 24px) / 4) !important;
             }
         }

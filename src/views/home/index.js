@@ -51,7 +51,6 @@ export default function Home() {
         },
     }));
 
-
     const dispatch = useDispatch()
 
     const [assetList, setAssetList] = useState([]);
@@ -67,7 +66,7 @@ export default function Home() {
                 limit: pageLimit,
                 convert: "USD"
             }
-            let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssets", dispatch, true);
+            let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssetsWithTrade", dispatch, true);
             if (data.status === true) {
                 setPageCount(Number((data.count / pageLimit).toFixed()))
                 setAssetList(data.data);
@@ -229,7 +228,7 @@ export default function Home() {
                                         </Grid>
                                         <Grid item md={2} className="d-flex align-items-center justify-content-center">
                                             <Button className="theme-full-btn color-white text-capitalize"> Buy </Button>
-                                            <Button className="theme-empty-btn text-capitalize ml-1"> Swap </Button>
+                                            <Button className="theme-empty-btn text-capitalize ml-1"> Sell </Button>
                                         </Grid>
                                     </Grid>
                                 </CardContent>
