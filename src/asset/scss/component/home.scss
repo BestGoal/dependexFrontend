@@ -53,8 +53,20 @@
         .home-balance-type{
             color: $home-balance-type-color;
         }
-        .home-balance-money{
-            color: $home-balance-money-color;
+        .cut-letter-12{
+            word-break: break-all;
+            text-overflow: ellipsis;
+            width: 50%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .home-balance-money-minus{
+            color: rgb(226, 17, 17);
+            font-weight: bold;
+        }
+        .home-balance-money-plus{
+            font-weight: bold;
+            color: blue;
         }
         .home-balance-icon-p{
             background-color: $home-balance-icon-bg-color;

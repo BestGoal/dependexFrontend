@@ -12,6 +12,7 @@ import Swap from "./exchange-cards/swap"
 import Buy from "./exchange-cards/buy"
 import Sell from "./exchange-cards/sell"
 import Grid from '@material-ui/core/Grid'
+import { history } from "../../history"
 
 export default function SectionOne() {
 
@@ -31,7 +32,7 @@ export default function SectionOne() {
                                     <Tab className="card-item" label="BUY" {...ShowIndex(0)} />
                                     <Tab className="card-item" label="SWAP" {...ShowIndex(1)} />
                                     <Tab className="card-item" label="SELL" {...ShowIndex(2)} />
-                                    <Tab className="card-item" label="SAVE & EARN" {...ShowIndex(3)} />
+                                    <Tab className="card-item" label="SAVE & EARN" {...ShowIndex(3)} onClick={()=>history.push("/login")} />
                                 </Tabs>
                             </AppBar>
                             <TabPanel value={value} index={0}>

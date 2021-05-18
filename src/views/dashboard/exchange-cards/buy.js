@@ -13,7 +13,7 @@ import SwapVert from "@material-ui/icons/SwapVert"
 import Axios from "../../../pre/request"
 import { Root } from "../../../pre/config"
 
-export default function SectionOne() {
+export default function Buy() {
 
     const [money1, setMoney1] = React.useState(null)
     const [money2, setMoney2] = React.useState(null)
@@ -27,7 +27,13 @@ export default function SectionOne() {
     })
     const [value1, setValue1] = React.useState(0)
     const [value2, setValue2] = React.useState(0)
+
     const [asset, setAsset] = React.useState([])
+    const [asset1, setAsset1] = React.useState([])
+    const [asset2, setAsset2] = React.useState([])
+
+    const [assetSearch1, setAssetSearch1] = React.useState("")
+    const [assetSearch2, setAssetSearch2] = React.useState("")
 
     const moneyOpen1 = Boolean(money1);
     const id1 = moneyOpen1 ? 'simple-popover' : undefined;
@@ -45,6 +51,8 @@ export default function SectionOne() {
             let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssets");
             if (data.status === true && data.data.length) {
                 setAsset(data.data)
+                setAsset1(data.data)
+                setAsset2(data.data)
             }
         }
         fetchData()
@@ -81,6 +89,56 @@ export default function SectionOne() {
             setValue1(0)
             setValue2(0)
         }
+    }
+
+    const asset1Filter = (value) => {
+        let data = asset.filter(item => {
+            let startsWithCondition = false;
+            let includesCondition = false;
+            let startsWithConditionc = false
+            let includesConditionc = false
+
+            let uitem = (item["name"]).toString();
+            startsWithCondition = uitem.toLowerCase().startsWith(value.toLowerCase());
+            includesCondition = uitem.toLowerCase().includes(value.toLowerCase());
+
+            let citem = (item["currency"]).toString();
+            startsWithConditionc = citem.toLowerCase().startsWith(value.toLowerCase());
+            includesConditionc = citem.toLowerCase().includes(value.toLowerCase());
+
+            if (startsWithCondition || startsWithConditionc) {
+                if(startsWithCondition) {
+                    return startsWithCondition
+                } else {
+                    return startsWithConditionc
+                }
+            } else if (!startsWithCondition && (includesCondition || includesConditionc)) {
+                if(includesCondition) {
+                    return includesCondition
+                } else {
+                    return includesConditionc
+                }
+            } else return null
+        })
+        setAssetSearch1(value)
+        setAsset1(data)
+    }
+
+    const asset2Filter = (value) => {
+        let data = asset.filter(item => {
+            let startsWithCondition = false;
+            let includesCondition = false;
+            let uitem = (item["name"]).toString();
+            startsWithCondition = uitem.toLowerCase().startsWith(value.toLowerCase());
+            includesCondition = uitem.toLowerCase().includes(value.toLowerCase());
+            if (startsWithCondition) {
+                return startsWithCondition
+            } else if (!startsWithCondition && includesCondition) {
+                return includesCondition
+            } else return null
+        })
+        setAssetSearch2(value)
+        setAsset2(data)
     }
 
     return (
@@ -135,10 +193,12 @@ export default function SectionOne() {
                                 variant="filled"
                                 type="text"
                                 className="dropdown-exchange-input"
+                                value={assetSearch1}
+                                onChange={(e)=>asset1Filter(e.currentTarget.value)}
                             />
                         </CardContent>
                         {
-                            asset.map((item, key) => (
+                            asset1.map((item, key) => (
                                 <Box className="dropdown-exchange-item d-flex justify-content-between align-items-center pl-1 pr-1"
                                     onClick={() => {
                                         setCItem1(item)
@@ -216,10 +276,12 @@ export default function SectionOne() {
                                 variant="filled"
                                 type="text"
                                 className="dropdown-exchange-input"
+                                value={assetSearch2}
+                                onChange={(e)=>asset2Filter(e.currentTarget.value)}
                             />
                         </CardContent>
                         {
-                            asset.map((item, key) => (
+                            asset2.map((item, key) => (
                                 <Box className="dropdown-exchange-item d-flex justify-content-between align-items-center pl-1 pr-1"
                                     onClick={() => {
                                         setCItem2(item)

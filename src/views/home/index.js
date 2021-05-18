@@ -41,13 +41,7 @@ export default function Home() {
             display: "flex !important",
             padding: theme.spacing(1, 1, 1, 0),
             paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-            transition: theme.transitions.create('width'),
-            [theme.breakpoints.up('sm')]: {
-                width: '100%',
-                '&:focus': {
-                    width: '100%',
-                },
-            },
+            transition: theme.transitions.create('width')
         },
     }));
 
@@ -70,6 +64,10 @@ export default function Home() {
             if (data.status === true) {
                 setPageCount(Number((data.count / pageLimit).toFixed()))
                 setAssetList(data.data);
+                let chartData = await Axios("POST", { list: data.data, condition: sendData }, Root.adminUrl + "admin/api/getAssetsWithChart");
+                if(chartData.status) {
+                    setAssetList(chartData.data);
+                }
             }
         }
         fetchData()
@@ -188,53 +186,33 @@ export default function Home() {
 
             {
                 assetList.map((item, i) => (
-                    <Grid key={i} container spacing={3}>
-                        <Grid item md={3}>
-                            <Card className="bg-transparent box-shadow-none home-border-item">
-                                <CardContent className="home-card-content">
-                                    <Box className="d-flex align-items-center">
-                                        <Box className="home-currency-icon-p d-flex justify-content-center align-items-center">
-                                            <img src={item.img} alt="" className="home-balance-icon" />
-                                        </Box>
-                                        <Box className="d-flex flex-direction-column pl-1">
-                                            <Box>
-                                                <Typography className="home-balance-type font-weight-bold">{item.name}</Typography>
-                                            </Box>
-                                            <Box>
-                                                <Typography className="font-weight-bold home-balance-type">$ {item.usdt}</Typography>
-                                                <Typography className="home-balance-money">{item.crypto} {item.currency}</Typography>
-                                            </Box>
-                                        </Box>
+                    <Card key={i} className="bg-transparent box-shadow-none home-border-item mb-1">
+                        <CardContent className="home-card-content d-flex">
+                            <Grid container>
+                                <Grid item md={2}>
+                                    <Box className="d-flex justify-content-start align-items-center">
+                                        <img src={item.img} alt="" className="home-balance-icon" />
+                                        <Typography className="home-balance-type cut-letter-12 font-weight-bold">{item.name}</Typography>
+                                        <Typography className="home-balance-type font-weight-bold">({item.currency})</Typography>
                                     </Box>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item md={9}>
-                            <Card className="bg-transparent box-shadow-none home-border-item">
-                                <CardContent className="home-card-content d-flex">
-                                    <Grid container>
-                                        <Grid item md={2}>
-                                            <Typography className="home-balance-money">{item.currency} Price</Typography>
-                                            <Typography className="font-weight-bold home-balance-type">${item.price}</Typography>
-                                            <Typography className="home-balance-money">{item.time}</Typography>
-                                        </Grid>
-                                        <Grid item md={8} className="pr-1">
-                                            <Chart
-                                                options={getName(item.tradeData)}
-                                                series={getTradeData(item.tradeData)}
-                                                type="area"
-                                                height={80}
-                                            />
-                                        </Grid>
-                                        <Grid item md={2} className="d-flex align-items-center justify-content-center">
-                                            <Button className="theme-full-btn color-white text-capitalize"> Buy </Button>
-                                            <Button className="theme-empty-btn text-capitalize ml-1"> Sell </Button>
-                                        </Grid>
-                                    </Grid>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                                    <Typography className="font-weight-bold home-balance-type mt-1">$ {item.price.toFixed(5)}</Typography>
+                                    <Typography className={item.type ? "home-balance-money-plus" : "home-balance-money-minus"}> {!item.type && "-"} {item.different} ({item.percent}) %</Typography>
+                                </Grid>
+                                <Grid item md={8} className="pr-1">
+                                    <Chart
+                                        options={getName(item.tradeData)}
+                                        series={getTradeData(item.tradeData)}
+                                        type="area"
+                                        height={80}
+                                    />
+                                </Grid>
+                                <Grid item md={2} className="d-flex align-items-center justify-content-center">
+                                    <Button className="theme-full-btn color-white text-capitalize"> Buy </Button>
+                                    <Button className="theme-empty-btn text-capitalize ml-1"> Sell </Button>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
                 ))
             }
             <Box className="d-flex justify-content-end p-1">
