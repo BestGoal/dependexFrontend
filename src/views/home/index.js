@@ -106,11 +106,6 @@ export default function Home() {
         return btcChartData;
     }
 
-    const filterAssets = (value) => {
-        setSearchValue(value);
-        fetchData()
-    }
-
     return (
         <React.Fragment>
             <Grid container spacing={1}>
@@ -141,8 +136,8 @@ export default function Home() {
                     </Card>
                 </Grid>
             </Grid>
-            <Grid container className="d-flex justify-content-between pt-1 pb-1 pr-1">
-                <Grid item md={6}>
+            <Grid container className="pt-1 pb-1 pr-1">
+                <Grid item md={6} className="d-flex justify-content-start">
                     <TextField
                         label="Search..."
                         placeholder=""
@@ -150,8 +145,9 @@ export default function Home() {
                         variant="filled"
                         className="home-search-input"
                         value={search}
-                        onChange={(e)=>filterAssets(e.currentTarget.value)}
+                        onChange={(e) => setSearchValue(e.currentTarget.value)}
                     />
+                    <Button className="theme-full-btn color-white text-capitalize home-search-btn ml-1" onClick={(e) => fetchData()}> Search </Button>
                 </Grid>
                 <Grid item md={6} className="d-flex justify-content-end">
                     <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
@@ -164,13 +160,13 @@ export default function Home() {
                         <Grid item md={2}>
                             <Card className="bg-transparent box-shadow-none home-border-item">
                                 <CardContent className="home-card-content">
-                                    <Box className="d-flex align-items-center">
+                                    <Box className="d-flex align-items-center justify-content-start">
                                         <Box className="home-currency-icon-p d-flex justify-content-center align-items-center">
                                             <img src={item.img} alt="" className="home-balance-icon" />
                                         </Box>
                                         <Box className="d-flex flex-direction-column pl-1">
                                             <Box>
-                                                <Typography className="home-balance-type cut-letter-12 font-weight-bold">{item.name}</Typography>
+                                                <Typography className="home-balance-type font-weight-bold letter-cut-dot">{item.name}</Typography>
                                             </Box>
                                             <Box>
                                                 <Typography className="font-weight-bold home-balance-type">$ {item.usdt}</Typography>
@@ -214,10 +210,10 @@ export default function Home() {
                 ))
             }
             {
-                assetList.length && 
-                    <Box className="d-flex justify-content-end p-1">
-                        <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
-                    </Box>
+                assetList.length &&
+                <Box className="d-flex justify-content-end p-1">
+                    <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
+                </Box>
             }
         </React.Fragment>
     )

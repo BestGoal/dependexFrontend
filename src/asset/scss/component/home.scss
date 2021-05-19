@@ -60,6 +60,13 @@
             overflow: hidden;
             white-space: nowrap;
         }
+        .letter-cut-dot{
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+        }
         .home-balance-money-minus{
             color: rgb(226, 17, 17);
             font-weight: bold;
@@ -74,8 +81,8 @@
             width: 3em;
             height: 3em;
             .home-balance-icon{
-                width: 80%;
-                height: 80%;
+                width: 40px;
+                height: 40px;
                 color: $sidebar-icon;
             }
         }
@@ -91,13 +98,16 @@
         }
     }
     .home-search-input {
-        width: 100%;
+        width: 70%;
         margin: 0;
         background: $white;
         & > div {
             background-color: rgb(250 250 250);
             // border: none !important;
         }
+    }
+    .home-search-btn{
+        width: 20%;
     }
     .security-container{
         .sub-header{
