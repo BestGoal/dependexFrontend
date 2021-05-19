@@ -90,6 +90,15 @@
             }
         }
     }
+    .home-search-input {
+        width: 100%;
+        margin: 0;
+        background: $white;
+        & > div {
+            background-color: rgb(250 250 250);
+            // border: none !important;
+        }
+    }
     .security-container{
         .sub-header{
             color: $sidebar-color;

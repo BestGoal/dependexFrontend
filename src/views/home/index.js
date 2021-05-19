@@ -6,44 +6,15 @@ import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import InputBase from '@material-ui/core/InputBase';
+import TextField from '@material-ui/core/TextField'
 import Pagination from '@material-ui/lab/Pagination'
 import Chart from 'react-apexcharts'
 import AttachMoney from "@material-ui/icons/AttachMoney"
 import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet"
-import SearchIcon from '@material-ui/icons/Search';
-import { makeStyles } from '@material-ui/core/styles';
 import Axios from "../../pre/request"
 import { Root } from "../../pre/config"
 
 export default function Home() {
-
-    const useStyles = makeStyles((theme) => ({
-        search: {
-            position: 'relative',
-            borderRadius: theme.shape.borderRadius,
-            border: "2px solid rgb(240, 242, 247)",
-            marginLeft: "0 !important"
-        },
-        searchIcon: {
-            padding: theme.spacing(0, 2),
-            height: '100%',
-            position: 'absolute',
-            pointerEvents: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        inputRoot: {
-            color: 'inherit',
-        },
-        inputInput: {
-            display: "flex !important",
-            padding: theme.spacing(1, 1, 1, 0),
-            paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-            transition: theme.transitions.create('width')
-        },
-    }));
 
     const dispatch = useDispatch()
 
@@ -52,26 +23,29 @@ export default function Home() {
     const [pageLimit] = useState(10);
     const [pageCount, setPageCount] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
+    const [search, setSearchValue] = useState("");
 
     useEffect(() => {
-        async function fetchData() {
-            let sendData = {
-                start: pageStart,
-                limit: pageLimit,
-                convert: "USD"
-            }
-            let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssetsWithTrade", dispatch, true);
-            if (data.status === true) {
-                setPageCount(Number((data.count / pageLimit).toFixed()))
-                setAssetList(data.data);
-                let chartData = await Axios("POST", { list: data.data, condition: sendData }, Root.adminUrl + "admin/api/getAssetsWithChart");
-                if(chartData.status) {
-                    setAssetList(chartData.data);
-                }
+        fetchData()
+    }, [])
+
+    async function fetchData() {
+        let sendData = {
+            start: pageStart,
+            limit: pageLimit,
+            convert: "USD",
+            search
+        }
+        let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/getAssetsWithTrade", dispatch, true);
+        if (data.status === true) {
+            setPageCount(Number((data.count / pageLimit).toFixed()))
+            setAssetList(data.data);
+            let chartData = await Axios("POST", { list: data.data, condition: sendData }, Root.adminUrl + "admin/api/getAssetsWithChart");
+            if (chartData.status) {
+                setAssetList(chartData.data);
             }
         }
-        fetchData()
-    }, [pageStart, pageLimit, dispatch])
+    }
 
     const handleChange = (event, value) => {
         setPageStart((pageLimit * (value - 1)) + 1)
@@ -132,7 +106,10 @@ export default function Home() {
         return btcChartData;
     }
 
-    const classes = useStyles();
+    const filterAssets = (value) => {
+        setSearchValue(value);
+        fetchData()
+    }
 
     return (
         <React.Fragment>
@@ -165,18 +142,15 @@ export default function Home() {
                 </Grid>
             </Grid>
             <Grid container className="d-flex justify-content-between pt-1 pb-1 pr-1">
-                <Grid item className={classes.search} md={6}>
-                    <Box className={classes.searchIcon}>
-                        <SearchIcon />
-                    </Box>
-                    <InputBase
-                        placeholder="Search…"
-                        max={10}
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
+                <Grid item md={6}>
+                    <TextField
+                        label="Search..."
+                        placeholder=""
+                        margin="normal"
+                        variant="filled"
+                        className="home-search-input"
+                        value={search}
+                        onChange={(e)=>filterAssets(e.currentTarget.value)}
                     />
                 </Grid>
                 <Grid item md={6} className="d-flex justify-content-end">
@@ -186,38 +160,65 @@ export default function Home() {
 
             {
                 assetList.map((item, i) => (
-                    <Card key={i} className="bg-transparent box-shadow-none home-border-item mb-1">
-                        <CardContent className="home-card-content d-flex">
-                            <Grid container>
-                                <Grid item md={2}>
-                                    <Box className="d-flex justify-content-start align-items-center">
-                                        <img src={item.img} alt="" className="home-balance-icon" />
-                                        <Typography className="home-balance-type cut-letter-12 font-weight-bold">{item.name}</Typography>
-                                        <Typography className="home-balance-type font-weight-bold">({item.currency})</Typography>
+                    <Grid key={i} container spacing={3}>
+                        <Grid item md={2}>
+                            <Card className="bg-transparent box-shadow-none home-border-item">
+                                <CardContent className="home-card-content">
+                                    <Box className="d-flex align-items-center">
+                                        <Box className="home-currency-icon-p d-flex justify-content-center align-items-center">
+                                            <img src={item.img} alt="" className="home-balance-icon" />
+                                        </Box>
+                                        <Box className="d-flex flex-direction-column pl-1">
+                                            <Box>
+                                                <Typography className="home-balance-type cut-letter-12 font-weight-bold">{item.name}</Typography>
+                                            </Box>
+                                            <Box>
+                                                <Typography className="font-weight-bold home-balance-type">$ {item.usdt}</Typography>
+                                                <Typography className="home-balance-money">{item.crypto} {item.currency}</Typography>
+                                            </Box>
+                                        </Box>
                                     </Box>
-                                    <Typography className="font-weight-bold home-balance-type mt-1">$ {item.price.toFixed(5)}</Typography>
-                                    <Typography className={item.type ? "home-balance-money-plus" : "home-balance-money-minus"}> {!item.type && "-"} {item.different} ({item.percent}) %</Typography>
-                                </Grid>
-                                <Grid item md={8} className="pr-1">
-                                    <Chart
-                                        options={getName(item.tradeData)}
-                                        series={getTradeData(item.tradeData)}
-                                        type="area"
-                                        height={80}
-                                    />
-                                </Grid>
-                                <Grid item md={2} className="d-flex align-items-center justify-content-center">
-                                    <Button className="theme-full-btn color-white text-capitalize"> Buy </Button>
-                                    <Button className="theme-empty-btn text-capitalize ml-1"> Sell </Button>
-                                </Grid>
-                            </Grid>
-                        </CardContent>
-                    </Card>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item md={10}>
+                            <Card className="bg-transparent box-shadow-none home-border-item">
+                                <CardContent className="home-card-content d-flex">
+                                    <Grid container>
+                                        <Grid item md={2}>
+                                            <Box className="d-flex justify-content-start align-items-center">
+                                                <img src={item.img} alt="" className="home-balance-icon" />
+                                                <Typography className="home-balance-type cut-letter-12 font-weight-bold ml-1">{item.name}</Typography>
+                                                <Typography className="home-balance-type font-weight-bold">({item.currency})</Typography>
+                                            </Box>
+                                            <Typography className="font-weight-bold home-balance-type mt-1">$ {item.price}</Typography>
+                                            <Typography className={item.type ? "home-balance-money-plus" : "home-balance-money-minus"}> {!item.type && "-"} {item.different} ({item.percent}) %</Typography>
+                                        </Grid>
+                                        <Grid item md={8} className="pr-1">
+                                            <Chart
+                                                options={getName(item.tradeData)}
+                                                series={getTradeData(item.tradeData)}
+                                                type="area"
+                                                height={60}
+                                            />
+                                        </Grid>
+                                        <Grid item md={2} className="d-flex align-items-center justify-content-center">
+                                            <Button className="theme-full-btn color-white text-capitalize"> Buy </Button>
+                                            <Button className="theme-empty-btn text-capitalize ml-1"> Sell </Button>
+                                        </Grid>
+                                    </Grid>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    </Grid>
                 ))
             }
-            <Box className="d-flex justify-content-end p-1">
-                <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
-            </Box>
+            {
+                assetList.length && 
+                    <Box className="d-flex justify-content-end p-1">
+                        <Pagination page={currentPage} count={pageCount} showFirstButton showLastButton boundaryCount={2} onChange={handleChange} />
+                    </Box>
+            }
         </React.Fragment>
     )
 }

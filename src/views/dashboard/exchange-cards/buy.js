@@ -8,7 +8,6 @@ import Popover from '@material-ui/core/Popover'
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp"
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown"
 import SearchIcon from "@material-ui/icons/Search"
-import LockOpen from "@material-ui/icons/LockOpen"
 import SwapVert from "@material-ui/icons/SwapVert"
 import Axios from "../../../pre/request"
 import { Root } from "../../../pre/config"
@@ -221,7 +220,7 @@ export default function Buy() {
                 </Popover>
                 <Box className="d-flex justify-content-between">
                     <Box className="d-flex align-items-center">
-                        <LockOpen /> {`${value1} ${cItem1.currency} = ${value2} ${cItem2.currency}`}
+                        {`${value1} ${cItem1.currency} = ${value2} ${cItem2.currency}`}
                     </Box>
                     <Box className="exchange-trade-btn" onClick={()=>replaceOneAndTwo()}>
                         <SwapVert />

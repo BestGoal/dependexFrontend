@@ -8,7 +8,6 @@ import Popover from '@material-ui/core/Popover'
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp"
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown"
 import SearchIcon from "@material-ui/icons/Search"
-import LockOpen from "@material-ui/icons/LockOpen"
 import SwapVert from "@material-ui/icons/SwapVert"
 import Axios from "../../../pre/request"
 import { Root } from "../../../pre/config"
@@ -41,8 +40,6 @@ export default function Swap() {
     const moneyOpen2 = Boolean(money2);
     const id2 = moneyOpen2 ? 'simple-popover' : undefined;
 
-    const [mode, setMode] = React.useState(0)
-
     useEffect(() => {
         async function fetchData() {
             let sendData = {
@@ -70,7 +67,6 @@ export default function Swap() {
                 curreny2: cItem2.currency
             }
             let data = await Axios("POST", sendData, Root.adminUrl + "admin/api/exchangeCard");
-            console.log(data)
             if (data.status === true) {
                 setValue2(data.data)
             }
@@ -145,12 +141,6 @@ export default function Swap() {
 
     return (
         <React.Fragment>
-            <Box className="d-flex pt-1">
-                <Box className="exchange-card-rate-bar">
-                    <Button className={!mode ? "select-item" : ""} onClick={() => setMode(!mode)}>Floating Rate</Button>
-                    <Button className={mode ? "select-item" : ''} onClick={() => setMode(!mode)}>Fixed Rate</Button>
-                </Box>
-            </Box>
             <Box className="mt-1">
                 <Box className="exchange-card-input-header d-flex justify-content-start align-items-center">
                     <TextField
@@ -212,6 +202,7 @@ export default function Swap() {
                                         setCItem1(item)
                                         setMoney1(null)
                                         changeValue1(0)
+                                        setAssetSearch1("")
                                     }}
                                     key={key}
                                 >
@@ -229,7 +220,7 @@ export default function Swap() {
                 </Popover>
                 <Box className="d-flex justify-content-between">
                     <Box className="d-flex align-items-center">
-                        <LockOpen /> {`${value1} ${cItem1.currency} = ${value2} ${cItem2.currency}`}
+                        {`${value1} ${cItem1.currency} = ${value2} ${cItem2.currency}`}
                     </Box>
                     <Box className="exchange-trade-btn" onClick={() => replaceOneAndTwo()}>
                         <SwapVert />
@@ -295,6 +286,7 @@ export default function Swap() {
                                         setCItem2(item)
                                         setMoney2(null)
                                         changeValue1(0)
+                                        setAssetSearch2("")
                                     }}
                                     key={key}
                                 >
